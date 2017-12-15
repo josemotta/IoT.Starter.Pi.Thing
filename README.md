@@ -1,6 +1,6 @@
 # IoT.Starter.Pi.Thing		
 
-#### IoT Starter Pi Thing starts the app for Home Intelligence using a Raspberry Pi with Linux.
+### IoT Starter Pi Thing starts the app for Home Intelligence using a Raspberry Pi with Linux.
 
 The Raspberry Pi (RPI) with arm 32-bit CPU is supposed to be equipped with custom hardware like temperature and humidity sensors, proximity sensors, and maybe motors to open doors and windows. Infrared leds are very interesting, since they enable RPI to output commands to home appliances, as a universal remote control. The objective is to develop a user friendly  control to ambient light, air conditioner, home theater, etc.
 
