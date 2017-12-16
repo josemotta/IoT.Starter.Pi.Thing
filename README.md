@@ -30,7 +30,7 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 The RPI is supposed to be installed with following: 
 
 - The Linux Raspbian GNU/Linux 9.1 (stretch) [Lite version](https://www.raspberrypi.org/downloads/raspbian/) is used to initialize the `Thing`. Generate the Micro SD Card and boot the RPI.
-- Then it is wise to update/upgrade everything, I suggest a tutorial published by *Tlindener* in 2015. It is a great guide to follow, please get it [here](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/). Curiously, I found it when I searched for ThingHub.
+- Then it is wise to update/upgrade everything, I suggest a tutorial published by *Tlindener* in 2015. It is a great guide to follow, please get it [here](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/). Curiously, I found it when I was searching for ThingHub in the web.
 
 ### Test
 
