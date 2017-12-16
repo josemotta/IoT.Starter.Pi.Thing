@@ -14,11 +14,10 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 
 ### Product Modeling
 
-- The `Thing` maybe installed at some location (coordinates or zip code) and internal zones (0-n);
+- The `Thing` maybe installed at some location (coordinates or zip code) and internal zone (0-n);
 - Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
-- The `Thing` may report data/activities to the cloud, for example, to a `ThingHub` website;
-- A temperature and humidity sensor is mandatory at any `Thing`;
-- Temperature and humidity will be reported to the `ThingHub`;
+- The `Thing` may report to the cloud, for example to a `ThingHub` website, in order to store and retrieve info related to its activities;
+- A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  be reported to `ThingHub`;
 
 ### P&D
 
