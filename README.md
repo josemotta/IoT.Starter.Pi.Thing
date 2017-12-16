@@ -19,9 +19,18 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 - The `Thing` may report to the cloud, for example to a `ThingHub` website, in order to store and retrieve info related to its activities;
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` to be reported to `ThingHub`;
 
-### P&D
+### Programming and Development (P&D)
+
+#### Project home-web
+
+#### Project home-ui
 
 ### Deploy
+
+At this version the RPI is already installed with following Linux services: 
+
+- The Linux Raspbian GNU/Linux 9.1 (stretch) [Lite version](https://www.raspberrypi.org/downloads/raspbian/) is used to initialize the `Thing`. 
+- Then it is wise to update/upgrade everything, I suggest a tutorial published by *Tlindener* in 2015. It is a great guide to follow, please get it [here](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/).
 
 ### Test
 
