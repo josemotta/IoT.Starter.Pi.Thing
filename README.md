@@ -12,7 +12,7 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 - Deployment at RPI is based on Docker. Code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
 - IoT Starter Pi Thing includes basic stuff to be included in any `Thing` which means future projects are expected to start from `Thing`.
 
-### Product Modeling
+### Modeling
 
 - The `Thing` is installed at some location (coordinates or zip code) and internal zone (0-n);
 - Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
