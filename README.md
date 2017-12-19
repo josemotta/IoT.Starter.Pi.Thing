@@ -12,26 +12,57 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 - Deployment at RPI is based on Docker containers. As shown at this Alex Ellis [tutorial](https://blog.alexellis.io/dotnetcore-on-raspberrypi/ "Build .NET Core apps for Raspberry Pi with Docker"), code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
 - IoT Starter Pi Thing includes basic stuff to be included in any `Thing`, which means future projects are expected to start from this `Thing`.
 
-### Modeling
+### 1. Modeling
 
 - The `Thing` is installed at some location (coordinates or zip code) and internal zone (0-n);
 - Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
 - The `Thing` may use an external website, in order to store and retrieve info related to its activities;
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to an external website;
 
-### Programming and Development (P&D)
+### 2. Programming and Development (P&D)
 
 #### Project home-web
 
 #### Project home-ui
 
-### Deploy
+### 3. Deploy
+
+#### Linux
 
 The RPI is supposed to be installed with following: 
 
 - The Linux Raspbian GNU/Linux 9.1 (stretch) [Lite version](https://www.raspberrypi.org/downloads/raspbian/) is used to initialize the `Thing`. Generate the Micro SD Card at your micro with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
 - Then it is wise to update/upgrade everything, I suggest a tutorial published by Tlindener in 2015, please get it [here](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/). Skip the beginning and start at step 3. Just in case, if you need the configuration program raspi-config, it is already available at Lite version. 
 
-### Test
+#### Temperature Sensor DS18B20 1-wire
+
+The Thing is attached to a temperature sensor that support 1-Wire. Many models are available, for example, the DS18B20 described below.
+
+- [Dallas DS18B20](https://cdn.sparkfun.com/datasheets/Sensors/Temp/DS18B20.pdf "DS18B20") Programmable Resolution 1-Wire Digital Thermometer
+- Keyes assembly already includes pull up and led
+
+![DS18B20](https://i.imgur.com/MgeMeal.png)
+
+
+##### 1-Wire setup
+
+Append to /boot/config.txt (no spaces) and reboot. Sensor is attached to GPIO 4 of RPi header pin 7.
+
+    # Enable 1-wire interface
+    dtoverlay=w1-gpio-pullup,gpiopin=4
+
+##### Start & List
+
+    modprobe w1_gpio
+    modprobe w1_therm
+
+    lsmod | grep w1
+
+##### Read temperature
+
+    cd /sys/bus/w1/devices
+    cd 28-*
+    cat w1_slave
+### 4. Test
 
 
