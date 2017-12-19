@@ -64,7 +64,7 @@ Append to /boot/config.txt (no spaces) and reboot. Sensor Data In/Out pin is wir
     cd 28-*
     cat w1_slave
 
-Following is a screenshot, showing several commands related to temperature sensor. First, the `lsmod` command filtered by `grep` shows w1-related modules. Then, navigating through the /sys directory we may check sensors details, like the unique sensor id "28-00000523113b" shown at directory name.
+Following is a screenshot, showing several commands related to temperature sensor. First, the `lsmod` command filtered by `grep` shows w1-related modules. Then, navigating through the `/sys` directory we may check sensors details, like the unique sensor id "28-00000523113b" shown at directory name.
 
 	pi@lumi:~ $ lsmod | grep w1
 	w1_therm                6401  0
