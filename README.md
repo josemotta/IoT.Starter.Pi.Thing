@@ -65,7 +65,7 @@ Append to /boot/config.txt (no spaces) and reboot. Sensor is attached to GPIO 4 
     cd 28-*
     cat w1_slave
 
-Following is a screenshot, showing several commands related to temperature sensor. First, the `lsmod` command filtered by `grep` shows w1-related modules. Then, navigating through the /sys directory we may check the sensors details. After reading the temperature from our component with `cat w1_slave` command, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology. This is  all available at the Lite version of Linux Raspbian operating system.
+Following is a screenshot, showing several commands related to temperature sensor. First, the `lsmod` command filtered by `grep` shows w1-related modules. Then, navigating through the /sys directory we may check the sensors details. After reading the temperature from our component with `cat w1_slave` command, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology. Except for the DS18B20 and the wires to connect it, all this is  available with the Lite version of Linux Raspbian operating system.
 
 	pi@lumi:~ $ lsmod | grep w1
 	w1_therm                6401  0
