@@ -16,7 +16,7 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 
 - The `Thing` is installed at some location (coordinates or zip code) and internal zone (0-n);
 - Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
-- The `Thing` may use an external website, in order to store and retrieve info related to its activities;
+- The `Thing` may access external websites, in order to store and retrieve info related to its activities;
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to an external website;
 
 ### 2. Programming and Development (P&D)
