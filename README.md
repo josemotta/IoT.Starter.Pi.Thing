@@ -45,7 +45,7 @@ The Thing is attached to a temperature sensor that support 1-Wire. Many models a
 
 ##### 1-Wire setup
 
-Append to /boot/config.txt (no spaces) and reboot. Sensor Data In/Out pin is wired to GPIO 4 of RPi header pin 7.
+Append to /boot/config.txt (no spaces) and reboot. Sensor Data In/Out pin is wired to GPIO 4 of RPi, header pin 7.
 
     # Enable 1-wire interface
     dtoverlay=w1-gpio-pullup,gpiopin=4
