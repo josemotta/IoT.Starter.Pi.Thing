@@ -51,18 +51,46 @@ Append to /boot/config.txt (no spaces) and reboot. Sensor is attached to GPIO 4 
     # Enable 1-wire interface
     dtoverlay=w1-gpio-pullup,gpiopin=4
 
-##### Start & List
+##### Commands
 
+	#Start
     modprobe w1_gpio
     modprobe w1_therm
 
-    lsmod | grep w1
+    #List
+	lsmod | grep w1
 
-##### Read temperature
-
+	#Read the temperature
     cd /sys/bus/w1/devices
     cd 28-*
     cat w1_slave
+
+Following is a screen shot sample, showing the temperature at bottom, "27.750" degrees Celsius. "YES" means that CRC was checked ok after DS18B20 transmitted info to RPI.
+
+	pi@lumi:~ $ lsmod | grep w1
+	w1_therm                6401  0
+	w1_gpio                 4818  0
+	wire                   32619  2 w1_gpio,w1_therm
+	pi@lumi:~ $ cd /sys/bus/w1/devices
+	pi@lumi:/sys/bus/w1/devices $ ll
+	total 0
+	lrwxrwxrwx 1 root root 0 Dec 18 18:27 28-00000523113b -> ../../../devices/w1_bus_master1/28-00000523113b
+	lrwxrwxrwx 1 root root 0 Dec 18 18:27 w1_bus_master1 -> ../../../devices/w1_bus_master1
+	pi@lumi:/sys/bus/w1/devices $ cd 28-*
+	pi@lumi:/sys/bus/w1/devices/28-00000523113b $ ll
+	total 0
+	lrwxrwxrwx 1 root root    0 Dec 18 18:28 driver -> ../../../bus/w1/drivers/w1_slave_driver
+	-r--r--r-- 1 root root 4096 Dec 18 18:28 id
+	-r--r--r-- 1 root root 4096 Dec 18 18:28 name
+	drwxr-xr-x 2 root root    0 Dec 18 18:28 power
+	lrwxrwxrwx 1 root root    0 Dec 18 18:28 subsystem -> ../../../bus/w1
+	-rw-r--r-- 1 root root 4096 Dec 18 18:28 uevent
+	-rw-r--r-- 1 root root 4096 Dec 18 18:28 w1_slave
+	pi@lumi:/sys/bus/w1/devices/28-00000523113b $ cat w1_slave
+	bc 01 4b 46 7f ff 04 10 d2 : crc=d2 YES
+	bc 01 4b 46 7f ff 04 10 d2 t=27750
+	pi@lumi:/sys/bus/w1/devices/28-00000523113b $
+
 ### 4. Test
 
 
