@@ -8,8 +8,8 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 
 - Modeling follows API First strategy, in order to define the services provided by the `Thing`.
 - The API modeling should decompose the intelligence of the `Thing` concerning security, control and data access.
-- Programming and Development (P&D) will be accomplished at a speedy x64 micro with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
-- Deployment at RPI is based on Docker. Code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
+- Programming and Development (P&D) will be accomplished at speedy x64 micros with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
+- Deployment at RPI is based on Docker containers. As shown at this Alex Ellis [tutorial](https://blog.alexellis.io/dotnetcore-on-raspberrypi/ "Build .NET Core apps for Raspberry Pi with Docker"), code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
 - IoT Starter Pi Thing includes basic stuff to be included in any `Thing`, which means future projects are expected to start from this `Thing`.
 
 ### Modeling
