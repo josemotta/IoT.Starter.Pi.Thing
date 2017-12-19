@@ -17,7 +17,7 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 - The `Thing` is installed at some location (coordinates or zip code) and internal zone (0-n);
 - Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
 - The `Thing` may report to the cloud, for example to a `ThingHub` website, in order to store and retrieve info related to its activities;
-- A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` to be reported to `ThingHub`;
+- A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to `ThingHub`;
 
 ### Programming and Development (P&D)
 
@@ -29,8 +29,8 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 
 The RPI is supposed to be installed with following: 
 
-- The Linux Raspbian GNU/Linux 9.1 (stretch) [Lite version](https://www.raspberrypi.org/downloads/raspbian/) is used to initialize the `Thing`. Generate the Micro SD Card and boot the RPI.
-- Then it is wise to update/upgrade everything, I suggest a tutorial published by *Tlindener* in 2015. It is a great guide to follow, please get it [here](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/). Curiously, I found it when I was searching for ThingHub in the web.
+- The Linux Raspbian GNU/Linux 9.1 (stretch) [Lite version](https://www.raspberrypi.org/downloads/raspbian/) is used to initialize the `Thing`. Generate the Micro SD Card at your micro with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
+- Then it is wise to update/upgrade everything, I suggest a tutorial published by Tlindener in 2015, please get it [here](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/). Skip the beginning and start at step 3. Just in case, if you need the configuration program raspi-config, it is already available at Lite version. 
 
 ### Test
 
