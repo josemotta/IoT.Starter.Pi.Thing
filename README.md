@@ -1,6 +1,6 @@
 # IoT.Starter.Pi.Thing		
 
-### IoT Starter Pi Thing starts the app for Home Intelligence using a Raspberry Pi with Linux.
+### IoT Starter Pi Thing develops a cell for Home Intelligence using a Raspberry Pi with Linux.
 
 The Raspberry Pi (RPI) with arm 32-bit CPU is supposed to be equipped with custom hardware like temperature and humidity sensors, proximity sensors, and maybe motors to open doors and windows in the near future. Infrared leds are very interesting components to be explored, since they enable RPI to output commands to home appliances, as a universal remote control. The objective is to develop the `Thing`, a user friendly IoT device that may help us to manage ambient light, air conditioner and home theater among others.
 
@@ -16,8 +16,8 @@ The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/I
 
 - The `Thing` is installed at some location (coordinates or zip code) and internal zone (0-n);
 - Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
-- The `Thing` may report to the cloud, for example to a `ThingHub` website, in order to store and retrieve info related to its activities;
-- A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to `ThingHub`;
+- The `Thing` may use an external website, in order to store and retrieve info related to its activities;
+- A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to an external website;
 
 ### Programming and Development (P&D)
 
