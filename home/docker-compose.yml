@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  io.swagger:
+    image: io.swagger
+    build:
+      context: .
+      dockerfile: src/IO.Swagger/Dockerfile
+    ports:
+    - "5000:5000"
+    network_mode: bridge
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  home.ui:
+    image: home.ui
+    build:
+      context: .
+      dockerfile: src/Home.UI/Dockerfile
+    ports:
+    - "80"
+    network_mode: bridge
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
