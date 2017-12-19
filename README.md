@@ -43,7 +43,6 @@ The Thing is attached to a temperature sensor that support 1-Wire. Many models a
 
 ![DS18B20](https://i.imgur.com/MgeMeal.png)
 
-
 ##### 1-Wire setup
 
 Append to /boot/config.txt (no spaces) and reboot. Sensor is attached to GPIO 4 of RPi header pin 7.
