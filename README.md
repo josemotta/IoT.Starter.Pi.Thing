@@ -65,7 +65,7 @@ Append to /boot/config.txt (no spaces) and reboot. Sensor is attached to GPIO 4 
     cd 28-*
     cat w1_slave
 
-Following is a screenshot, showing several commands related to temperature sensor. First, the `lsmod` command filtered by grep shows "w1" related modules. Then, navigating through the /sys directory we may check the w1 devices. After reading from our component, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology. Please note that all this is built in  in the Linux Lite version.
+Following is a screenshot, showing several commands related to temperature sensor. First, the `lsmod` command filtered by `grep` shows w1-related modules. Then, navigating through the /sys directory we may check the w1 devices. After reading from our component, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology. Please note that all this is built in  in the Linux Lite version.
 
 	pi@lumi:~ $ lsmod | grep w1
 	w1_therm                6401  0
