@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: src/IO.Swagger/pi.Dockerfile
     ports:
-    - "5000"
+    - "5010"
     network_mode: bridge
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -22,3 +22,12 @@ services:
     network_mode: bridge
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+ 
+  ssl.proxy:
+    image: josemottalopes/nginx-proxy
+    build:
+      context: .
+      dockerfile: proxy.Dockerfile
+    ports:
+    - "443"
+    network_mode: bridge
