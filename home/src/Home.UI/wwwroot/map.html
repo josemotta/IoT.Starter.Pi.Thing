@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Watching on Map</title>
+<style>
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#map-holder {
+    height: 350px;
+    width: 500px;
+}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+var watchID; 
+function getLocation()
+{
+    // Check whether browser supports Geolocation API or not
+    if (navigator.geolocation)  // Supported
+    {
+        var positionOptions = {
+            timeout : Infinity,
+            maximumAge : 0,
+            enableHighAccuracy : true,
+        };
+        // Obtain the initial location one-off
+        navigator.geolocation.getCurrentPosition(getPosition, catchError, positionOptions);
+    }
+    else  // Not supported
+    {
+        alert("Oop! This browser does not support HTML5 Geolocation.");
+    }
+}    
+function watchLocation()
+{
+    // Check whether browser supports Geolocation API or not
+    if (navigator.geolocation)  // Supported
+    {
+        var positionOptions = {
+            timeout : Infinity,
+            maximumAge : 0,
+            enableHighAccuracy : true,
+        };
+        // Obtain the location at regularly interval
+        watchID = navigator.geolocation.watchPosition(getPosition, catchError, positionOptions);
+    }
+    else  // Not supported
+    {
+        alert("Oop! This browser does not support HTML5 Geolocation.");
+    }
+}
+function stopWatch() 
+{
+    // Discontinue obtaining location
+    navigator.geolocation.clearWatch(watchID);
+}
+function getPosition(position)
+{
+    var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    var mapOptions = {
+        zoom : 12,
+        center : location,
+        mapTypeId : google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById('map-holder'), mapOptions);
+    var marker = new google.maps.Marker({
+        position: location,
+        title: 'Here I am!',
+        map: map,
+        animation: google.maps.Animation.DROP
+    });
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        'latLng' : location
+        }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[1]) {
+                    var options = {
+                        content : results[1].formatted_address,
+                        position : location
+                    };
+                    var popup = new google.maps.InfoWindow(options);
+                    google.maps.event.addListener(marker, 'click', function() {
+                        popup.open(map);
+                    });
+                } 
+                else 
+                {
+                    alert('No results found');
+                }
+            } 
+            else 
+            {
+                alert('Geocoder failed due to: ' + status);
+            }
+        });
+}
+function catchError(error) {
+    switch(error.code) 
+    {
+        case error.TIMEOUT:
+            alert("The request to get user location has aborted as it has taken too long.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is not available.");
+            break;
+        case error.PERMISSION_DENIED:
+            alert("Permission to share location information has been denied!");
+            break;    
+        default:
+            alert("An unknown error occurred.");
+    }
+}
+</script>
+</head>
+<body onload="getLocation()">
+<div id="map-holder"></div>
+<button onclick="watchLocation()">Start Watching</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="stopWatch()">Stop Watching</button>
+</body>
+</html>

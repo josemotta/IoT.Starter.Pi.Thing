@@ -9,7 +9,11 @@
     <DockerServiceName>io.swagger</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="cert.pem" />
+    <None Include="key.pem" />
+    <None Include="proxy.conf" />
     <None Include="pi.docker-compose.yml" />
     <None Include="docker-compose.yml" />
+    <None Include="proxy.Dockerfile" />
   </ItemGroup>
 </Project>
