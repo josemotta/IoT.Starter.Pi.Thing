@@ -2,30 +2,27 @@
 
 ### IoT Starter Pi Thing develops a cell for Home Intelligence using a Raspberry Pi with Linux.
 
-The Raspberry Pi (RPI) with arm 32-bit CPU is supposed to be equipped with custom hardware like temperature and humidity sensors, proximity sensors, and maybe motors to open doors and windows in the near future. Infrared leds are very interesting components to be explored, since they enable RPI to output commands to home appliances, as a universal remote control. The objective is to develop the `Thing`, a user friendly IoT device that may help us to manage ambient light, air conditioner and home theater among others.
+For most IoT Home Intelligence projects, the Raspberry Pi (RPI) with arm 32-bit CPU is supposed to be equipped with custom hardware like temperature and humidity sensors, proximity sensors, and maybe motors to open doors and windows. Also, infrared leds are very interesting components to be explored, since they enable RPI to output commands to home appliances, as a universal remote control.
 
-The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core") which means home-web and home-ui are the starting projects. Main directions are summarized below:
+The `Thing` is an embryo of an IoT device, with the objective of helping us to start managing ambient light, air conditioner, home theater, and other functionality at home.
 
-- Modeling follows API First strategy, in order to define the services provided by the `Thing`.
-- The API modeling should decompose the intelligence of the `Thing` concerning security, control and data access.
-- Programming and Development (P&D) will be accomplished at speedy x64 micros with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
-- Deployment at RPI is based on Docker containers. As shown at this Alex Ellis [tutorial](https://blog.alexellis.io/dotnetcore-on-raspberrypi/ "Build .NET Core apps for Raspberry Pi with Docker"), code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
-- IoT Starter Pi Thing includes basic stuff to be included in any `Thing`, which means future projects are expected to start from this `Thing`.
 
 ### 1. Modeling
 
+IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, which means future projects are expected to start from this `Thing`. Modeling and development follows API First strategy, in order to define the services provided by the `Thing`. The API, taken as a sample for for this project, can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1). Depending on the `Thing` you need, adjustments should be done at current API, in order to reach the goals.
+
+- The API modeling should decompose the intelligence of the `Thing` concerning security, control and data access.
+- Programming and Development (P&D) will be accomplished at speedy x64 micros with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
+- Deployment at RPI is based on Docker containers. As shown at this Alex Ellis [tutorial](https://blog.alexellis.io/dotnetcore-on-raspberrypi/ "Build .NET Core apps for Raspberry Pi with Docker"), code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
 - The `Thing` is installed at some location (coordinates or zip code) and internal zone (0-n);
 - Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
-- The `Thing` may access external websites, in order to store and retrieve info related to its activities;
-- A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to an external website;
+- The `Thing` may access external web, in order to store and retrieve info related to its activities;
+- A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to external web;
+- The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core") which means home-web and home-ui are the starting projects.
 
-### 2. Programming and Development (P&D)
+### 2. Thing Hardware Setup
 
-#### Project home-web
-
-#### Project home-ui
-
-### 3. Deploy
+I´m using for testing a RPI 2 Model B and I just got RPI Model B and RPI Zero W to check.
 
 #### Linux
 
@@ -36,7 +33,7 @@ The RPI is supposed to be installed with following:
 
 #### Temperature Sensor DS18B20 1-wire
 
-The Thing is attached to a temperature sensor that support 1-Wire. Many models are available, for example, the DS18B20 described below.
+The Thing is attached to a temperature sensor that support 1-Wire. Many models are available, for example, the DS18B20 described below that is featuring at this `Thing`. Other popular sensors are available, providing temperature and humidity readings from the same component.
 
 - [Dallas DS18B20](https://cdn.sparkfun.com/datasheets/Sensors/Temp/DS18B20.pdf "DS18B20") Programmable Resolution 1-Wire Digital Thermometer
 - Keyes assembly already includes pull up and led
@@ -45,7 +42,7 @@ The Thing is attached to a temperature sensor that support 1-Wire. Many models a
 
 ##### 1-Wire setup
 
-Append to /boot/config.txt (no spaces) and reboot. Sensor Data In/Out pin is wired to GPIO 4 of RPi, header pin 7.
+In order to activate Linux drivers, it is necessary to append the configuration below to `/boot/config.txt` (no spaces) and reboot. Sensor `Data In/Out` pin is wired to `GPIO 4` of RPi, header `pin 7`.
 
     # Enable 1-wire interface
     dtoverlay=w1-gpio-pullup,gpiopin=4
@@ -64,7 +61,7 @@ Append to /boot/config.txt (no spaces) and reboot. Sensor Data In/Out pin is wir
     cd 28-*
     cat w1_slave
 
-Following is a screenshot, showing several commands related to temperature sensor. First, the `lsmod` command filtered by `grep` shows w1-related modules. Then, navigating through the `/sys` directory we may check sensors details, like the unique sensor id "28-00000523113b" shown at directory name.
+Following is a screenshot related to temperature sensor. First, the `lsmod` command filtered by `grep` shows w1-related modules. Then, navigating through `/sys/bus/w1/devices/` we check sensors details, for example, the unique sensor id for my DS18B20 is "28-00000523113b", shown at directory name below. Other similar components tied to 1-wire bus would be properly identified as well.
 
 	pi@lumi:~ $ lsmod | grep w1
 	w1_therm                6401  0
@@ -91,6 +88,12 @@ Following is a screenshot, showing several commands related to temperature senso
 	pi@lumi:/sys/bus/w1/devices/28-00000523113b $
 
 After reading the temperature from our component with `cat w1_slave` command, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology. Please note that this is available out of the box, from the Lite version of Linux Raspbian operating system.
+
+### 3. Programming and Development (P&D)
+
+#### Project home-web
+
+#### Project home-ui
 
 ### 4. Test
 
