@@ -215,7 +215,7 @@ After first run you should be patient to access the `Thing` device, since a lot 
 
 ![](https://i.imgur.com/t7VaJfk.png)
 
-Please note that `home-web` is using `http` protocol. At top, the browser window from `home-ui`  shows `https` protocol being used. The self-signed certificate generates a "Not secure" alert from the browser that may be fixed installing a true certificate.
+Please note that `home-web` is using `http` protocol to show swagger UI. The another browser window from `home-ui`  shows `https` protocol being used. The self-signed certificate generates a "Not secure" alert from the browser that may be fixed installing a true certificate.
 
 ### 3. Programming and development (P&D)
 
