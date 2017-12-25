@@ -7,7 +7,7 @@ For most IoT Home Intelligence projects, the Raspberry Pi (RPI) with arm 32-bit 
 The `Thing` is an embryo of an IoT device, with the objective of helping us to start managing ambient light, air conditioner, home theater, and other functionality at home.
 
 
-### 1. Modeling
+### 1. Specs
 
 IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, which means future projects are expected to start from this `Thing`. Modeling and development follows API First strategy, in order to define the services provided by the `Thing`. The API, taken as a sample for this project series, can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1). Depending on the `Thing` you need, adjustments should be done at current API, in order to reach the goals.
 
@@ -20,7 +20,7 @@ IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, whi
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to external web;
 - The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core") which means home-web and home-ui are the starting projects.
 
-### 2. RPI Setup
+### 2. Setup
 
 I´m using for testing a RPI 2B and I just got some RPI 3B and RPI Zero W to check.
 
@@ -94,11 +94,33 @@ Following is a screenshot related to temperature sensor. First, the `lsmod` comm
 
 After reading the temperature from our component with `cat w1_slave` command, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology. Please note that this is available out of the box, from the Lite version of Linux Raspbian operating system.
 
-### 2. SSL Cryptography
+### 2. SSL reverse proxy
 
+The question now is about security. Which protocols should we use? `Http` is fine or cryptography should be added by using `https`?
 
+Since the `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core"), `http` protocol through ports `80` and `5010` are being used to communicate with outside world, respectively by `home-ui` and `home-web` projects. Behind the scenes, this code is supposed to be a Kestrel implementation of the web server provided by ASP.NET Core.
 
-### 3. Programming and Development (P&D)
+In order to keep `home-ui` and `home-web` away from the security questions, this [post](https://medium.com/@oliver.zampieri/self-signed-ssl-reverse-proxy-with-docker-dbfc78c05b41) from Oliver Zampieri shows how to set up quickly a reverse proxy running with `NginX` in a docker container, and configure it with self signed certificates.  
+
+	# Self-signed SSL reverse proxy with docker
+	#
+	# Starting from arm32v7/nginx image, based on Oliver Zampieri post below.
+	#  https://medium.com/@oliver.zampieri/self-signed-ssl-reverse-proxy-with-docker-dbfc78c05b41
+	#
+	#  Key and Cert files were generated separately at RPI:
+	#  /usr/bin/openssl req -subj '/CN=localhost' -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365
+	
+	FROM arm32v7/nginx
+	
+	WORKDIR /app
+	COPY proxy.conf /etc/nginx/conf.d/
+	COPY key.pem /etc/nginx/conf.d/
+	COPY cert.pem /etc/nginx/conf.d/
+	
+	EXPOSE 443
+	CMD ["nginx", "-g", "daemon off;"]  
+
+### 3. Programming and development (P&D)
 
 #### Project home-web
 
