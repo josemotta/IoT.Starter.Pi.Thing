@@ -211,6 +211,10 @@ The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `h
 	d9e682be8359        josemottalopes/nginx-proxy:latest   "nginx -g 'daemon ..."   7 minutes ago        Up 7 minutes        80/tcp, 0.0.0.0:443->443/tcp     angry_mcclintock
 	root@lumi:~#
 
+After this first run you should be patient to access the `Thing` device, since a lot of stuff is loaded and prepared by .NET Core and ASP.NET platforms. After that you can check
+
+![](https://i.imgur.com/t7VaJfk.png)
+
 ### 3. Programming and development (P&D)
 
 #### Project home-web
