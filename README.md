@@ -211,9 +211,11 @@ The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `h
 	d9e682be8359        josemottalopes/nginx-proxy:latest   "nginx -g 'daemon ..."   7 minutes ago        Up 7 minutes        80/tcp, 0.0.0.0:443->443/tcp     angry_mcclintock
 	root@lumi:~#
 
-After this first run you should be patient to access the `Thing` device, since a lot of stuff is loaded and prepared by .NET Core and ASP.NET platforms. After that you can check
+After first run you should be patient to access the `Thing` device, since a lot of stuff is loaded and prepared by .NET Core and ASP.NET platforms. Please see below browser access to both  `home-ui` and `home-web`. 
 
 ![](https://i.imgur.com/t7VaJfk.png)
+
+Please note that `home-web` is using `http` protocol. At top, the browser window from `home-ui`  shows `https` protocol being used. The self-signed certificate generates a "Not secure" alert from the browser that may be fixed installing a true certificate.
 
 ### 3. Programming and development (P&D)
 
