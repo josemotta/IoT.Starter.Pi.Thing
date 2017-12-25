@@ -124,7 +124,44 @@ A new `proxy.Dockerfile` is created to handle security protocol, and secure the 
 	EXPOSE 443
 	CMD ["nginx", "-g", "daemon off;"]  
 
-Another container is created inside the `Thing`, based on the new [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image that is pushed to the cloud by P&D Team. It should be deployed with `home-ui` and `home-web` images to RPI as shown at screen shot below:
+The `pi.docker-compose.yml` adds another service for the ssl.proxy, as shown below:
+
+
+	version: '3'
+	
+	services:
+	  io.swagger:
+	    image: josemottalopes/home-web
+	    build:
+	      context: .
+	      dockerfile: src/IO.Swagger/pi.Dockerfile
+	    ports:
+	    - "5010"
+	    network_mode: bridge
+	    environment:
+	      - ASPNETCORE_ENVIRONMENT=Development
+	
+	  home.ui:
+	    image: josemottalopes/home-ui
+	    build:
+	      context: .
+	      dockerfile: src/Home.UI/pi.Dockerfile
+	    ports:
+	    - "80"
+	    network_mode: bridge
+	    environment:
+	      - ASPNETCORE_ENVIRONMENT=Development
+	 
+	  ssl.proxy:
+	    image: josemottalopes/nginx-proxy
+	    build:
+	      context: .
+	      dockerfile: proxy.Dockerfile
+	    ports:
+	    - "443"
+	    network_mode: bridge
+
+Another container should run inside the `Thing`. It is pushed to the cloud by P&D Team, available at [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image that should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below:
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
