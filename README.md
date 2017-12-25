@@ -161,7 +161,7 @@ A new service `ssl.proxy` is added to `pi.docker-compose.yml`, as shown below. A
 	    - "443"
 	    network_mode: bridge
 
-The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below showing commands to run all images:
+The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below showing commands that run all images:
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
