@@ -104,7 +104,7 @@ Since the `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josem
 
 In order to keep `home-ui` and `home-web` away from the security questions, this [post](https://medium.com/@oliver.zampieri/self-signed-ssl-reverse-proxy-with-docker-dbfc78c05b41) from Oliver Zampieri shows how to *set up a reverse proxy with `NginX` in a docker container, and configure it with self signed certificates*. 
 
-A new `proxy.Dockerfile` is created to handle security protocol, and access the `Thing` device using  `htpps` and SSL. 
+A new `proxy.Dockerfile` is created to handle security protocol, and secure the `Thing` device using  `htpps` and SSL. 
 
 	# Self-signed SSL reverse proxy with docker
 	#
