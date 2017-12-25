@@ -9,8 +9,10 @@ For most IoT Home Intelligence projects, the Raspberry Pi (RPI) with arm 32-bit 
 
 ### 1. Specs
 
-Modeling and development follows API First strategy, in order to define the services provided by the `Thing`. The API taken as a sample can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1). Depending on the `Thing` you need, adjustments should be done at current API, in order to reach the goals.
+Modeling and development follows API First strategy, in order to define the services provided by the `Thing`.
 
+- The API taken as a sample for this `Thing` can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1).
+- Depending on the `Thing` you need, adjustments should be done at current API, aiming your goals.
 - The API modeling should decompose the intelligence of the `Thing` concerning security, control and data access.
 - Programming and Development (P&D) will be accomplished at speedy x64 micros with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
 - Deployment at RPI is based on Docker containers. As shown at this Alex Ellis [tutorial](https://blog.alexellis.io/dotnetcore-on-raspberrypi/ "Build .NET Core apps for Raspberry Pi with Docker"), code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
