@@ -9,13 +9,13 @@ For most IoT Home Intelligence projects, the Raspberry Pi (RPI) with arm 32-bit 
 
 ### 1. Specs
 
-Modeling and development follows API First strategy, in order to define the services provided by the `Thing`. The API, taken as a sample for this project series, can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1). Depending on the `Thing` you need, adjustments should be done at current API, in order to reach the goals.
+Modeling and development follows API First strategy, in order to define the services provided by the `Thing`. The API, taken as a sample for this project, can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1). Depending on the `Thing` you need, adjustments should be done at current API, in order to reach the goals.
 
 - The API modeling should decompose the intelligence of the `Thing` concerning security, control and data access.
 - Programming and Development (P&D) will be accomplished at speedy x64 micros with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
 - Deployment at RPI is based on Docker containers. As shown at this Alex Ellis [tutorial](https://blog.alexellis.io/dotnetcore-on-raspberrypi/ "Build .NET Core apps for Raspberry Pi with Docker"), code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
 - The `Thing` is supposed to be installed at some location (coordinates or zip code) and internal zone inside location (0-n);
-- Each `Thing` will be designed to handle some home environment (temperature, humidity), lighting, sound (music, video).
+- Each `Thing` will be designed to handle home environment (temperature, humidity), lighting, sound (music, video), human presence, etc.
 - The `Thing` may access external web, in order to store and retrieve info related to its activities;
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to external web;
 - The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core") which means home-web and home-ui are the starting projects.
