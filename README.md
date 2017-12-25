@@ -94,7 +94,7 @@ Following is a screenshot related to temperature sensor. First, the `lsmod` comm
 
 After reading the temperature from our component with `cat w1_slave` command, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology.
 
-Please note that this is available **out of the box**, from the Lite version of Linux Raspbian operating system.
+Please note that this is all available **out of the box**, from the Lite version of Linux Raspbian operating system.
 
 ### 2. SSL reverse proxy
 
