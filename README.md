@@ -22,18 +22,23 @@ IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, whi
 
 ### 2. Thing Hardware Setup
 
-I´m using for testing a RPI 2 Model B and I just got RPI Model B and RPI Zero W to check.
+I´m using for testing a RPI 2B and I just got some RPI 3B and RPI Zero W to check.
 
 #### Linux
 
 The RPI is supposed to be installed with following: 
 
-- The Linux Raspbian GNU/Linux 9.1 (stretch) [Lite version](https://www.raspberrypi.org/downloads/raspbian/) is used to initialize the `Thing`. Generate the Micro SD Card at your micro with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
-- Then it is wise to update/upgrade everything, I suggest a tutorial published by Tlindener in 2015, please get it [here](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/). Skip the beginning and start at step 3. Just in case, if you need the configuration program raspi-config, it is already available at Lite version. 
+- **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/) is the minimal image based on Debian Stretch, used to initialize the `Thing`. Generate the Micro SD Card at your micro with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
+- Then, it is wise to **update/upgrade** everything. Follow this [tutorial](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/) published by Tlindener in 2015. Skip the beginning, starting at step 3. If you need the configuration program raspi-config, it is already available at Lite version. 
+- **Docker** is available for RPI since 2016, please check this [post](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/) from Matt Richardson, director of Raspberry Pi Foundation North America. Many other tutorials are also available for Docker setup at RPI. 
 
 #### Temperature Sensor DS18B20 1-wire
 
-The Thing is attached to a temperature sensor that support 1-Wire. Many models are available, for example, the DS18B20 described below that is featuring at this `Thing`. Other popular sensors are available, providing temperature and humidity readings from the same component.
+The `Thing` is supposed to be attached to a temperature sensor. In order to better explore the built in `1-Wire` technology available at Linux, the DS18B20 is featuring at this `Thing`. Please see more details below.
+
+Other popular temperature sensors are available, for example the DHT22 allows temperature and humidity readings from the same component. Please check this [post](https://www.hackster.io/adamgarbo/raspberry-pi-2-iot-thingspeak-dht22-sensor-b208f4) from Adam Garbo, containing valuable info to get RPI running.
+
+##### DS18B20 Digital Thermometer
 
 - [Dallas DS18B20](https://cdn.sparkfun.com/datasheets/Sensors/Temp/DS18B20.pdf "DS18B20") Programmable Resolution 1-Wire Digital Thermometer
 - Keyes assembly already includes pull up and led
