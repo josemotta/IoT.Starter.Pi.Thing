@@ -22,9 +22,9 @@ Modeling and development follows API First strategy, in order to define the serv
 
 ### 2. Setup
 
-I´m using for testing a RPI 2B and I just got some RPI 3B and RPI Zero W to check.
+I´m using for test a RPI 2B and I just got some RPI 3B and RPI Zero W to check.
 
-#### Linux
+#### Operating System
 
 The RPI is supposed to be installed with following: 
 
