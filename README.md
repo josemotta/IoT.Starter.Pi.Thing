@@ -2,6 +2,8 @@
 
 ### IoT Starter Pi Thing develops a cell for Home Intelligence using a Raspberry Pi with Linux.
 
+IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, which means future projects are expected to start from this `Thing`.
+
 For most IoT Home Intelligence projects, the Raspberry Pi (RPI) with arm 32-bit CPU is supposed to be equipped with custom hardware like temperature and humidity sensors, proximity sensors, and maybe motors to open doors and windows. Also, infrared leds are very interesting components to be explored, since they enable RPI to output commands to home appliances, as a universal remote control.
 
 The `Thing` is an embryo of an IoT device, with the objective of helping us to start managing ambient light, air conditioner, home theater, and other functionality at home.
@@ -9,7 +11,7 @@ The `Thing` is an embryo of an IoT device, with the objective of helping us to s
 
 ### 1. Specs
 
-IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, which means future projects are expected to start from this `Thing`. Modeling and development follows API First strategy, in order to define the services provided by the `Thing`. The API, taken as a sample for this project series, can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1). Depending on the `Thing` you need, adjustments should be done at current API, in order to reach the goals.
+Modeling and development follows API First strategy, in order to define the services provided by the `Thing`. The API, taken as a sample for this project series, can be found [here](https://app.swaggerhub.com/apis/motta/home/1.0.1). Depending on the `Thing` you need, adjustments should be done at current API, in order to reach the goals.
 
 - The API modeling should decompose the intelligence of the `Thing` concerning security, control and data access.
 - Programming and Development (P&D) will be accomplished at speedy x64 micros with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
