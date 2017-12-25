@@ -20,7 +20,7 @@ IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, whi
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to external web;
 - The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core") which means home-web and home-ui are the starting projects.
 
-### 2. Thing Hardware Setup
+### 2. RPI Setup
 
 I´m using for testing a RPI 2B and I just got some RPI 3B and RPI Zero W to check.
 
@@ -93,6 +93,10 @@ Following is a screenshot related to temperature sensor. First, the `lsmod` comm
 	pi@lumi:/sys/bus/w1/devices/28-00000523113b $
 
 After reading the temperature from our component with `cat w1_slave` command, the value appears at bottom, after "t=". The actual temperature is 27.750 degrees Celsius and "YES" means that CRC was checked OK after DS18B20 transmitted the info to RPI. A simple and safe device that can be multiplied, thanks to the 1-wire bus technology. Please note that this is available out of the box, from the Lite version of Linux Raspbian operating system.
+
+### 2. SSL Cryptography
+
+
 
 ### 3. Programming and Development (P&D)
 
