@@ -124,7 +124,7 @@ A new `proxy.Dockerfile` is created to handle security protocol, and secure the 
 	EXPOSE 443
 	CMD ["nginx", "-g", "daemon off;"]  
 
-The `pi.docker-compose.yml` adds another service for the ssl.proxy, as shown below:
+A new service `ssl.proxy` is added to `pi.docker-compose.yml`, as shown below. After the project is built, a new [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image is pushed to the cloud by P&D Team. 
 
 
 	version: '3'
@@ -161,7 +161,7 @@ The `pi.docker-compose.yml` adds another service for the ssl.proxy, as shown bel
 	    - "443"
 	    network_mode: bridge
 
-Another container should run inside the `Thing`. It is pushed to the cloud by P&D Team, available at [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image that should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below:
+The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below showing commands to run all images:
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
