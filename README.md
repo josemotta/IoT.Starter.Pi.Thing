@@ -122,8 +122,19 @@ In order to keep `home-ui` and `home-web` away from the security questions, this
 	EXPOSE 443
 	CMD ["nginx", "-g", "daemon off;"]  
 
-A new service `ssl.proxy` is added to `pi.docker-compose.yml`, as shown below. After the project is built, a new [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image is pushed to the cloud by P&D Team. 
+The nginx configuration requires the `proxy.conf` file to be added.
 
+	server {
+	  listen 443;
+	  ssl on;
+	  ssl_certificate /etc/nginx/conf.d/cert.pem;
+	  ssl_certificate_key /etc/nginx/conf.d/key.pem;
+	  location / {
+	     proxy_pass http://192.168.20.102:80;
+	  }
+	}
+
+A new service `ssl.proxy` is added to Docker-Composer, as shown below. 
 
 	version: '3'
 	
@@ -159,7 +170,15 @@ A new service `ssl.proxy` is added to `pi.docker-compose.yml`, as shown below. A
 	    - "443"
 	    network_mode: bridge
 
-The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below showing commands that run all images:
+Using the docker-compose command shown below, the project is built at a speedy x64 machine. Then, all three images are pushed to the cloud.   
+
+	cd home
+	docker-compose -f docker-compose.ci.build.yml build   
+	docker push josemottalopes/home-web:latest
+	docker push josemottalopes/home-ui:latest
+	docker push josemottalopes/nginx-proxy:latest
+
+There are now three images that each `Thing` should deploy to RPI. The previous docker images for home-web and home-ui have now a new [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image. The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below showing commands that run all images:
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
