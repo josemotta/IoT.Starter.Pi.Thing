@@ -98,7 +98,7 @@ Please note that this is available **out of the box**, from the Lite version of 
 
 ### 2. SSL reverse proxy
 
-How about security? Which protocols should be used? `Http` is fine or cryptography should be added by using `https`?
+How about security? Which protocols should be used? `Http` is fine or cryptography should be added through `https`?
 
 Since the `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core"), `http` protocol through ports `80` and `5010` are being used to communicate with outside world, respectively by `home-ui` and `home-web` projects. Behind the scenes, this code is supposed to be a Kestrel implementation of the web server provided by ASP.NET Core.
 
