@@ -104,7 +104,7 @@ Since the `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josem
 
 In order to keep `home-ui` and `home-web` away from the security questions, this [post](https://medium.com/@oliver.zampieri/self-signed-ssl-reverse-proxy-with-docker-dbfc78c05b41) from Oliver Zampieri shows how to *set up quickly a reverse proxy running with `NginX` in a docker container, and configure it with self signed certificates*. 
 
-A new `proxy.Dockerfile` is created to handle security protocol, in order to certificate the access to the `Thing` device using SSL and `htpps`. 
+A new `proxy.Dockerfile` is created to handle security protocol, and access the `Thing` device using  `htpps` and SSL certificates. 
 
 	# Self-signed SSL reverse proxy with docker
 	#
@@ -124,7 +124,7 @@ A new `proxy.Dockerfile` is created to handle security protocol, in order to cer
 	EXPOSE 443
 	CMD ["nginx", "-g", "daemon off;"]  
 
-A container is created and a new [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image and pushed to cloud. It should be deployed with `home-ui` and `home-web` images to RPI as shown at screen shot below:
+Another container is created inside the `Thing`, based on the new [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image that is pushed to the cloud by P&D Team. It should be deployed with `home-ui` and `home-web` images to RPI as shown at screen shot below:
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
