@@ -122,7 +122,7 @@ In order to keep `home-ui` and `home-web` away from the security questions, this
 	EXPOSE 443
 	CMD ["nginx", "-g", "daemon off;"]  
 
-The nginx configuration requires the `proxy.conf` file to be added.
+The nginx configuration requires a `proxy.conf` file to be added, redirecting `https` traffic to `http://192.168.20.102:80` where `home-ui` server is listening to. The details are shown below.
 
 	server {
 	  listen 443;
