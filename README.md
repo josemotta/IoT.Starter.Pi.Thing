@@ -230,7 +230,7 @@ There are now three images that each `Thing` should deploy to RPI: the previous 
 	d9e682be8359        josemottalopes/nginx-proxy:latest   "nginx -g 'daemon ..."   7 minutes ago        Up 7 minutes        80/tcp, 0.0.0.0:443->443/tcp     angry_mcclintock
 	root@lumi:~#
 
-After the first run you should be patient to access the `Thing` device, since a lot of stuff is loaded and initialized by .NET Core and ASP.NET platforms. Please see below access to both  `home-ui` and `home-web`. 
+After the first run, you should be patient to access the `Thing` device, since a lot of stuff is loaded and initialized by .NET Core and ASP.NET platforms. Please see below access to both  `home-ui` and `home-web`. 
 
 ![](https://i.imgur.com/t7VaJfk.png)
 
