@@ -134,7 +134,7 @@ The nginx configuration requires a `proxy.conf` file to be added, redirecting `h
 	  }
 	}
 
-A new service `ssl.proxy` is added to Docker-Composer, as shown below. 
+A new service `ssl.proxy` is added to `pi.docker-compose.yml`, as shown below. 
 
 	version: '3'
 	
@@ -170,7 +170,7 @@ A new service `ssl.proxy` is added to Docker-Composer, as shown below.
 	    - "443"
 	    network_mode: bridge
 
-Using the docker-compose command shown below, the project is built at a speedy x64 machine. Then, all three images are pushed to the cloud.   
+Use commands below to build the `Thing` at a speedy x64 machine. Then, all three images are pushed to the cloud.   
 
 	cd home
 	docker-compose -f docker-compose.ci.build.yml build   
