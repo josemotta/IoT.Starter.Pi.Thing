@@ -34,7 +34,7 @@ The RPI is supposed to be installed with following:
 
 #### Temperature Sensor DS18B20 1-wire
 
-The `Thing` is supposed to be attached to a temperature sensor. In order to better explore the built in `1-Wire` technology available at Linux, the DS18B20 is featuring at this `Thing`. Please see more details below.
+The `Thing` is supposed to be attached to a temperature sensor. In order to explore the built in `1-Wire` technology available at Linux, the DS18B20 is featuring at this `Thing`. Please see more details below.
 
 Other popular temperature sensors are available, for example the DHT22 allows temperature and humidity readings from the same component. Please check this [post](https://www.hackster.io/adamgarbo/raspberry-pi-2-iot-thingspeak-dht22-sensor-b208f4) from Adam Garbo, containing valuable info to get RPI running.
 
