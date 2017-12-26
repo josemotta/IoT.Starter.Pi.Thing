@@ -17,14 +17,12 @@ Modeling and development follows API First strategy, in order to define the serv
 - Programming and Development (P&D) will be accomplished at speedy x64 micros with Windows 10 and Visual Studio 2017 exploring .NET Core 2.0 and ASP.NET Core 2.0 platforms.
 - Deployment at RPI is based on Docker containers. As shown at this Alex Ellis [tutorial](https://blog.alexellis.io/dotnetcore-on-raspberrypi/ "Build .NET Core apps for Raspberry Pi with Docker"), code is generated at x64 machine,  containers are pushed to the cloud and then pulled back to be deployed at the RPI.
 - The `Thing` is supposed to be installed at some location (coordinates or zip code) and internal zone inside location (0-n);
-- Each `Thing` will be designed to handle home environment (temperature, humidity), lighting, sound (music, video), human presence, etc.
+- Each `Thing` will be designed to handle home environment (temperature, humidity), lighting, sound, video, human presence, etc.
 - The `Thing` may access external web, in order to store and retrieve info related to its activities;
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to external web;
 - The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core") which means home-web and home-ui are the starting projects.
 
 ### 2. Setup
-
-I´m using for test a RPI 2B and I just got some RPI 3B and RPI Zero W to check.
 
 #### Operating System
 
@@ -245,3 +243,4 @@ Please note that `home-web` is using `http` protocol at port `5010`, showing the
 ### 4. Test
 
 
+Testing a RPI 2B and I just got some RPI 3B and RPI Zero W to check.
