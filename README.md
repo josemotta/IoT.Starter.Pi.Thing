@@ -178,7 +178,9 @@ Use commands below to build the `Thing` at a speedy x64 machine. Then, all three
 	docker push josemottalopes/home-ui:latest
 	docker push josemottalopes/nginx-proxy:latest
 
-There are now three images that each `Thing` should deploy to RPI: the previous docker images for [`home-web`](https://hub.docker.com/r/josemottalopes/home-web/), [`home-ui`](https://hub.docker.com/r/josemottalopes/home-ui/) and the [`nginx-proxy`](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image. Below are shown the commands to run the images that should be deployed:
+There are now three images that each `Thing` should deploy to RPI: the previous docker images for [`home-web`](https://hub.docker.com/r/josemottalopes/home-web/), [`home-ui`](https://hub.docker.com/r/josemottalopes/home-ui/) and the [`nginx-proxy`](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image.
+
+The following commands run the images that should be deployed:
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
