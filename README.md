@@ -102,7 +102,7 @@ How about security? Which protocols should be used? `Http` is fine or cryptograp
 
 Since the `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core"), the `http` protocol through ports `80` and `5010` are being used for outside world communication, respectively by `home-ui` and `home-web` projects. Behind the scenes, this code is supposed to be a Kestrel implementation of the web server provided by ASP.NET Core.
 
-In order to keep `home-ui` and `home-web` away from these security questions, this [post](https://medium.com/@oliver.zampieri/self-signed-ssl-reverse-proxy-with-docker-dbfc78c05b41) from Oliver Zampieri shows how to *set up a reverse proxy with `NginX` in a docker container, and configure it with self signed certificates*. The following `proxy.Dockerfile` is created to handle security protocol, and secure the `Thing` device using  `htpps` and SSL. 
+In order to keep `home-ui` and `home-web` away from these security questions, this [post](https://medium.com/@oliver.zampieri/self-signed-ssl-reverse-proxy-with-docker-dbfc78c05b41) from Oliver Zampieri shows how to *set up a reverse proxy with `NginX` in a docker container, and configure it with self signed certificates*. The `proxy.Dockerfile` is created to handle security protocol, and secure the `Thing` device using  `htpps` and SSL. 
 
 	# Self-signed SSL reverse proxy with docker
 	#
