@@ -246,7 +246,7 @@ Based on this Peter Leow [post](https://www.codeproject.com/Articles/1184757/HTM
 - **map.html**: show the current position on map;
 - **geolocate.html**: show the current latitude and longitude coordinates.
 
-The tests work fine using `https`, as you can see below. But the window at right is using `http` and got an error. It seems the API only supports `https` protocol.
+The tests work fine using `https`, as you can see below. But the window at right is using `http` and got an error. Looks like the HTML5 Geolocation API  supports only `https` protocol.
 
 ![](https://i.imgur.com/3HXmfXR.png)
 
