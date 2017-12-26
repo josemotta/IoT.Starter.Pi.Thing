@@ -180,7 +180,7 @@ Using the docker-compose command shown below, the project is built at a speedy x
 	docker push josemottalopes/home-ui:latest
 	docker push josemottalopes/nginx-proxy:latest
 
-There are now three images that each `Thing` should deploy to RPI. The previous docker images for home-web and home-ui have now a new [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image. The `nginx-proxy` image should be deployed to RPI together with `home-ui` and `home-web`, as shown at screen shot below showing commands that run all images:
+There are now three images that each `Thing` should deploy to RPI: the previous docker images for [`home-web`](https://hub.docker.com/r/josemottalopes/home-web/), [`home-ui`](https://hub.docker.com/r/josemottalopes/home-ui/) and the [`nginx-proxy`](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image. Below are shown the commands to run the images that should be deployed:
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
