@@ -254,7 +254,7 @@ The tests work fine using `https`, as you can see below. But the window at right
 
 For the same reason mentioned before, the `home-web` should follow the API customization.
 
-As an example, the `GetZoneTemperature` operation is implemented. The simple solution take in account that only one DS18B20 temperature sensor is available. The code is added to `EnvironmentApi` controller and extracts temperature info from `/sys/bus/w1/devices/28-00000523113b/w1_slave`.
+As an example, the `GetZoneTemperature` operation is implemented. This simple solution takes into account that only one DS18B20 temperature sensor is wired. The code is added to `EnvironmentApi` controller and extracts temperature info from `/sys/bus/w1/devices/28-00000523113b/w1_slave`.
 
         /// <param name="zoneId"></param>
         /// <response code="200">Zone temperature</response>
@@ -298,5 +298,7 @@ The `Thing` is able now to inform the temperature, using the swagger UI interfac
 
 ### 5. Conclusion
 
-All tests were done with RPI 2B, I expect to check also RPI 3B and RPI Zero W.
+The current tests were done with the Raspberry Pi 2 Model B.
+
+
 
