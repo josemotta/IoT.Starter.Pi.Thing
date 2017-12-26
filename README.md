@@ -241,15 +241,14 @@ Please note that `home-web` is using `http` protocol at port `5010`, showing the
 
 The starter kit concept suggests to keep `home-ui` clear for proper customization.
 
-Based on Peter Leow [post](https://www.codeproject.com/Articles/1184757/HTML-Geolocation), a Geolocation Test with a couple static pages are added to `home-ui`, exploring the HTML5 Geolocation API. Both files listed below can be found at `home\src\Home.UI\wwwroot`:
+Based on Peter Leow [post](https://www.codeproject.com/Articles/1184757/HTML-Geolocation), geolocation tests with a couple static pages are added to `home-ui`, exploring the HTML5 Geolocation API. Both files listed below can be found at `home\src\Home.UI\wwwroot`:
 
 - **map.html**: show the current position on map;
 - **geolocate.html**: show the current latitude and longitude coordinates.
 
-Both files work fine using `https`, as you can see below. But the window at right is using `http` and got an error.
+The tests work fine using `https`, as you can see below. But the window at right is using `http` and got an error. It seems the API only supports `https` protocol.
 
 ![](https://i.imgur.com/3HXmfXR.png)
-
 
 ### 4. Project `home-web`
 
