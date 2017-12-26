@@ -250,9 +250,8 @@ Both files work fine using `https`, as you can see below. But the window at righ
 
 ![](https://i.imgur.com/3HXmfXR.png)
 
-All tests were done with RPI 2B, I expect to check also RPI 3B and RPI Zero W.
 
-### 3. Project `home-web`
+### 4. Project `home-web`
 
 For the same reason mentioned before, the `home-web` should follow the API customization.
 
@@ -298,4 +297,7 @@ The `Thing` is able now to inform the temperature, using the swagger UI interfac
 
 ![](https://i.imgur.com/FDdmEOl.png)
 
+### 5. Conclusion
+
+All tests were done with RPI 2B, I expect to check also RPI 3B and RPI Zero W.
 
