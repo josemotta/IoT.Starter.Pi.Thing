@@ -173,7 +173,7 @@ A new service `ssl.proxy` is added to `pi.docker-compose.yml`, as shown below.
 Use commands below to build the `Thing` at a speedy x64 machine. Then, all three images are pushed to the cloud.   
 
 	cd home
-	docker-compose -f docker-compose.ci.build.yml build   
+	docker-compose -f pi.docker-compose.yml build   
 	docker push josemottalopes/home-web:latest
 	docker push josemottalopes/home-ui:latest
 	docker push josemottalopes/nginx-proxy:latest
