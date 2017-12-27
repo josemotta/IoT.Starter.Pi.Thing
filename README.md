@@ -181,7 +181,7 @@ Use commands below to build the `Thing` at a speedy x64 machine. Then, all three
 There are now three images that each `Thing` should deploy to RPI: the previous docker images for [`home-web`](https://hub.docker.com/r/josemottalopes/home-web/), [`home-ui`](https://hub.docker.com/r/josemottalopes/home-ui/) and the new [`nginx-proxy`](https://hub.docker.com/r/josemottalopes/nginx-proxy/) image.
 
 
-Deployment at RPI is accomplished by three commands to run the images. The `nginx-proxy` and `home-ui` images are pulled completely from the web and the last command starts downloading  `home-web`. Since it uses the same .NET platform than `home-ui`, several memory modules "Already exists" and don't need to be downloaded again. Cool!
+Deployment at RPI is accomplished by commands below. See that the `nginx-proxy` and `home-ui` images are pulled completely from the web. When the last command starts downloading  `home-web`, the same .NET platform than `home-ui`, four  memory modules "Already exists" and don't need to be downloaded again. That's cool!
 
 	alias yhomeui='docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest'
 	alias yhomeweb='docker run --privileged -p 5010:5010 -d josemottalopes/home-web:latest'
