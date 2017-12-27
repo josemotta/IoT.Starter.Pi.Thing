@@ -1,6 +1,6 @@
 # IoT.Starter.Pi.Thing		
 
-### IoT Starter Pi Thing develops a cell for Home Intelligence using a Raspberry Pi with Linux.
+### An embryo for Home Intelligence using a Raspberry Pi with Linux.
 
 IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, which means future projects are expected to start from here. The `Thing` is an embryo of an IoT device, with the objective of helping us to start managing ambient light, air conditioner, heater, home theater, and other functionality at home.
 
