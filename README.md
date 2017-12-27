@@ -231,7 +231,7 @@ Deployment at RPI is accomplished by commands below. See that the `nginx-proxy` 
 	d9e682be8359        josemottalopes/nginx-proxy:latest   "nginx -g 'daemon ..."   7 minutes ago        Up 7 minutes        80/tcp, 0.0.0.0:443->443/tcp     angry_mcclintock
 	root@lumi:~#
 
-The `docker ps` command shows the three containers running. After the first run, you should be patient to access the `Thing` device, since a lot of stuff is loaded and initialized by .NET Core and ASP.NET platforms. Please see below access to both  `home-ui` and `home-web`. 
+The `docker ps` command at the bottom shows three containers running. After the first run, you should be patient to access the `Thing` device, since a lot of stuff is loaded and initialized by .NET Core and ASP.NET platforms. Please see below access to both  `home-ui` and `home-web`. 
 
 ![](https://i.imgur.com/sHgcPCk.png)
 
