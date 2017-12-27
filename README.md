@@ -30,7 +30,7 @@ The RPI is supposed to be installed with following:
 
 - **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch, is used to initialize the `Thing`. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
 - Then, it is wise to **update/upgrade** everything. Follow this [tutorial](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/) published by Tlindener in 2015. Skip the beginning, starting at step 3. If you need the configuration program raspi-config, it is already available at Stretch Lite version. 
-- **Docker** is available for RPI since 2016, see the [announcement](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/) from Matt Richardson, director of Raspberry Pi Foundation North America. Several other tutorials are available for Docker setup at RPI. 
+- **Docker** is available for RPI since 2016, see the [announcement](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/) from Matt Richardson, director of Raspberry Pi Foundation North America. Several other tutorials are available for Docker setup at RPI, like [this](https://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/) one by Alex Ellis. 
 
 #### Temperature Sensor DS18B20 1-wire
 
