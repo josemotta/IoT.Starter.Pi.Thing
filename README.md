@@ -300,5 +300,5 @@ The `Thing` is able now to inform the temperature, using the swagger UI interfac
 
 The current tests were done with a Raspberry Pi 2 Model B. The `Thing` is now available to be used as a starter device on an IoT Home Intelligence application.
 
-
+Have fun!
 
