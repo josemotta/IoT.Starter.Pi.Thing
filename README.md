@@ -122,7 +122,7 @@ It would be great if we could keep `home-ui` and `home-web` away from these secu
 	EXPOSE 443
 	CMD ["nginx", "-g", "daemon off;"]  
 
-The nginx configuration requires a `proxy.conf` file to be added, redirecting `https` traffic to `http://192.168.20.102:80` where `home-ui` server is listening to, more details below.
+The NginX configuration requires a `proxy.conf` file to be added, redirecting `https` traffic to `http://192.168.20.102:80` where `home-ui` server is listening to, more details below.
 
 	server {
 	  listen 443;
