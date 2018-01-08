@@ -2,7 +2,7 @@
 
 ### An embryo for Home Intelligence using Raspberry Pi with Linux.
 
-IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, which means future projects are expected to start from here. The `Thing` is an embryo of an IoT device, with the objective of helping us to start managing ambient light, air conditioner, heater, home theater, and other functionality at home.
+Please check first part of this series at [IoT Starter Raspberry Pi Core](https://github.com/josemotta/IoT.Starter.Pi.Core). IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, which means future projects are expected to start from here. The `Thing` is an embryo of an IoT device, with the objective of helping us to start managing ambient light, air conditioner, heater, home theater, and other functionality at home.
 
 For most IoT Home Intelligence projects, the Raspberry Pi (RPI) with arm 32-bit CPU is supposed to be equipped with custom hardware like temperature and humidity sensors, proximity sensors, and maybe switches and motors to open doors and windows. Also, infrared leds are very interesting components to be explored, since they enable RPI to output commands to home appliances, as a universal remote control.
 
