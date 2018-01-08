@@ -1,5 +1,7 @@
 # IoT.Starter.Pi.Thing		
 
+Also published at [Code Project](https://github.com/josemotta/IoT.Starter.Pi.Thing)
+
 ### An embryo for Home Intelligence using Raspberry Pi with Linux.
 
 Please check first part of this series at [IoT Starter Raspberry Pi Core](https://github.com/josemotta/IoT.Starter.Pi.Core).
