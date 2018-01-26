@@ -1,7 +1,5 @@
 # IoT.Starter.Pi.Thing		
 
-Also published at [Code Project](https://www.codeproject.com/Articles/1224347/IoT-Starter-Raspberry-Pi-Thing)
-
 ### An embryo for Home Intelligence using Raspberry Pi with Linux.
 
 Please check first part of this series at [IoT Starter Raspberry Pi Core](https://github.com/josemotta/IoT.Starter.Pi.Core).
@@ -305,4 +303,7 @@ The `Thing` is able now to inform the temperature, using the swagger UI interfac
 The current tests were done with a Raspberry Pi 2 Model B. The `Thing` is now available to be used as a starter device on an IoT Home Intelligence application.
 
 Have fun!
+
+---
+Also published at [Code Project](https://www.codeproject.com/Articles/1224347/IoT-Starter-Raspberry-Pi-Thing)
 
