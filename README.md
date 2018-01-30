@@ -1,6 +1,10 @@
 # IoT.Starter.Pi.Thing		
 
+#### Home Intelligence with Raspberry Pi
+
 ### An embryo for Home Intelligence using Raspberry Pi with Linux.
+
+## Introduction
 
 Please check first part of this series at [IoT Starter Raspberry Pi Core](https://github.com/josemotta/IoT.Starter.Pi.Core).
 
