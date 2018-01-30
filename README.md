@@ -13,7 +13,7 @@ IoT Starter Pi Thing includes the basic stuff to be included in any `Thing`, whi
 For most IoT Home Intelligence projects, the Raspberry Pi (RPI) with arm 32-bit CPU is supposed to be equipped with custom hardware like temperature and humidity sensors, proximity sensors, and maybe switches and motors to open doors and windows. Also, infrared leds are very interesting components to be explored, since they enable RPI to output commands to home appliances, as a universal remote control.
 
 
-### 1. Specs
+## 1. Specs
 
 Modeling and development follows API First strategy, in order to define the services provided by the `Thing`.
 
@@ -28,7 +28,7 @@ Modeling and development follows API First strategy, in order to define the serv
 - A temperature (optionally also humidity) sensor is mandatory at any `Thing`. It is expected that temperature (and humidity)  of each `Thing` be reported to external web;
 - The `Thing` is based on the [IoT.Starter.Pi.Core](https://github.com/josemotta/IoT.Starter.Pi.Core "IoT.Starter.Pi.Core") which means home-web and home-ui are the starting projects.
 
-### 2. Setup
+## 2. Setup
 
 #### Operating System
 
@@ -102,7 +102,7 @@ After reading the temperature from our component with `cat w1_slave` command, th
 
 Please note that this is all available **out of the box**, from the Lite version of Linux Raspbian operating system.
 
-### 3. SSL reverse proxy
+## 3. SSL reverse proxy
 
 How about security? Which protocols should be used? `Http` is fine or cryptography should be added through `https`?
 
@@ -256,7 +256,7 @@ The tests work fine using `https`, as you can see below. But the small window at
 
 ![](https://i.imgur.com/3HXmfXR.png)
 
-### 5. Project `home-web`
+## 5. Project `home-web`
 
 For the same reason mentioned before, the `home-web` should follow the API customization.
 
@@ -302,7 +302,7 @@ The `Thing` is able now to inform the temperature, using the swagger UI interfac
 
 ![](https://i.imgur.com/FDdmEOl.png)
 
-### 6. Conclusion
+## 6. Conclusion
 
 The current tests were done with a Raspberry Pi 2 Model B. The `Thing` is now available to be used as a starter device on an IoT Home Intelligence application.
 
