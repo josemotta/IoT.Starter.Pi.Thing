@@ -112,7 +112,7 @@ Unfortunately, this old version has issues with latest RPI binaries and is not r
 
 Considering that docker-compose is definitely needed, JC Berthon shows a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to build it for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI. The binary file generated was added to `home/Docker` folder in the project repository.
 
-Next step is to copy the new `docker-compose` binary to `/usr/local/bin` and update its settings, as shown below.
+Next step is to copy the new `docker-compose` binary to `/usr/local/bin` and adjust its settings, as shown below.
 
 	$ cp docker-compose /usr/local/bin
 	$ chown root:root /usr/local/bin/docker-compose
@@ -130,7 +130,7 @@ Finally, confirm which docker-compose version is installed:
 	CPython version: 2.7.13
 	OpenSSL version: OpenSSL 1.0.1t  3 May 2016
 
-A known issue is that using this same binary with RPI Zero returns error. Further checks are necessary to figure out what happens in this case.
+A known issue is that this same binary with RPI Zero returns error. Further checks are necessary to figure out what happens in this case.
 
 ## Automatic operation
 
