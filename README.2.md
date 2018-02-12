@@ -117,9 +117,25 @@ Unfortunately, this version has issues with latest RPI binaries and is not relia
 	pi@zuni:~ $ docker-compose version
 	-bash: /usr/bin/docker-compose: No such file or directory
 
-Since the updated binary for docker-compose is still needed, J‑C Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I gave it a try and, after a long run at RPI, the latest docker-compose was built.
+Since the updated binary for docker-compose is still needed, J‑C Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI and generated the binary file.
 
-Installing it is simple, just copy it to 
+Next step is to copy `docker-compose` binary to `/usr/local/bin` and update its settings:
+
+	$ sudo cp Docker/* /usr/local/bin
+	$ sudo chown root:root /usr/local/bin/docker-compose
+	$ sudo chmod 0755 /usr/local/bin/docker-compose
+	
+	$ ls -l /usr/local/bin
+	total 7052
+	-rwxr-xr-x 1 root root 7218664 Feb 12 19:06 docker-compose
+
+We can confirm that docker-compose version `1.19.0-rc2` is installed: 
+
+	pi@lumi:~ $ docker-compose version
+	docker-compose version 1.19.0-rc2, build dfcb02c
+	docker-py version: 2.7.0
+	CPython version: 2.7.13
+	OpenSSL version: OpenSSL 1.0.1t  3 May 2016
 
 ## Manual operation
 
