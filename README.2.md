@@ -58,7 +58,7 @@ The easiest way to install docker-composer at RPI would be using command:
 
 	sudo apt-get install docker-compose
 
-Following is the log, please note that docker-compose `version 1.8.0` is installed:
+According to log below, this path results on docker-compose `version 1.8.0` being installed at RPI:
 
 	pi@zuni:~ $ sudo apt-get install docker-compose
 	Reading package lists... Done
@@ -134,6 +134,8 @@ We can confirm that docker-compose version `1.19.0-rc2` is installed:
 	docker-py version: 2.7.0
 	CPython version: 2.7.13
 	OpenSSL version: OpenSSL 1.0.1t  3 May 2016
+
+Unfortunately using this same docker-composer binary at RPI Zero returns an segment fault error. It´s necessary to check what happened in this case.
 
 ## Manual operation
 
