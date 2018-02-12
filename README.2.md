@@ -115,19 +115,19 @@ Unfortunately, this old version has issues with latest RPI binaries and is not r
 	Removing docker-compose (1.8.0-2) ...
 	Processing triggers for man-db (2.7.6.1-2) ...
 
-Considering that docker-compose is definitely needed, J‑C Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI and generated the binary file.
+Considering that docker-compose is definitely needed, JC Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do the build for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI and the binary file was generated.
 
 Next step is to copy `docker-compose` binary to `/usr/local/bin` and update its settings:
 
-	$ sudo cp Docker/* /usr/local/bin
-	$ sudo chown root:root /usr/local/bin/docker-compose
-	$ sudo chmod 0755 /usr/local/bin/docker-compose
+	$ cp docker-compose /usr/local/bin
+	$ chown root:root /usr/local/bin/docker-compose
+	$ chmod 0755 /usr/local/bin/docker-compose
 	
 	$ ls -l /usr/local/bin
 	total 7052
 	-rwxr-xr-x 1 root root 7218664 Feb 12 19:06 docker-compose
 
-We can confirm that docker-compose version `1.19.0-rc2` is installed: 
+We can confirm the docker-compose version installed: 
 
 	pi@lumi:~ $ docker-compose version
 	docker-compose version 1.19.0-rc2, build dfcb02c
@@ -135,7 +135,7 @@ We can confirm that docker-compose version `1.19.0-rc2` is installed:
 	CPython version: 2.7.13
 	OpenSSL version: OpenSSL 1.0.1t  3 May 2016
 
-Unfortunately using this same docker-composer binary at RPI Zero returns an segment fault error. It´s necessary to check what happened in this case.
+A known issue is that using this same binary at RPI Zero returns an segment fault error. It is necessary to check what happens in this case. 
 
 ## Manual operation
 
