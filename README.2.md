@@ -117,7 +117,7 @@ Unfortunately, this version has issues with latest RPI binaries and is not relia
 	pi@zuni:~ $ docker-compose version
 	-bash: /usr/bin/docker-compose: No such file or directory
 
-Since the updated binary for docker-compose is still needed, J‑C Berthon showed a [easy way](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I gave it a try and, after a long run at RPI, the latest docker-compose was built.
+Since the updated binary for docker-compose is still needed, J‑C Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I gave it a try and, after a long run at RPI, the latest docker-compose was built.
 
 Installing it is simple, just copy it to 
 
