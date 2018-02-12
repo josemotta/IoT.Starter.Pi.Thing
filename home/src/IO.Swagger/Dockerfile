@@ -14,13 +14,9 @@ COPY src/IO.Swagger/IO.Swagger.csproj src/IO.Swagger/
 RUN dotnet restore src/IO.Swagger/
 COPY . .
 WORKDIR /src/src/IO.Swagger
-#RUN dotnet build -c Release -o /app
-#RUN dotnet build -c Release -r linux-arm -o /app
-#RUN dotnet build -c Development -r linux-arm -o /app
 RUN dotnet build -c Development -o /app
 
 FROM build AS publish
-#RUN dotnet publish -c Release -o /app
 RUN dotnet publish -c Development -o /app
 
 FROM base AS final

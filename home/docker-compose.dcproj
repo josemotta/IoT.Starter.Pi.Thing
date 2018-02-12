@@ -9,11 +9,24 @@
     <DockerServiceName>io.swagger</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="cert.pem" />
-    <None Include="key.pem" />
-    <None Include="proxy.conf" />
-    <None Include="pi.docker-compose.yml" />
+    <None Include="Proxy\setup\cert.pem" />
+    <None Include="Proxy\setup\key.pem" />
+    <None Include="lumi-compose.yml" />
+    <None Include="Lirc\lumi.dockerfile" />
+    <None Include="Lirc\remotes\lirc24.conf" />
+    <None Include="Lirc\remotes\lirc44.conf" />
+    <None Include="Lirc\remotes\Samsung_BN59-00678A.conf" />
+    <None Include="Lirc\setup\config.txt" />
+    <None Include="Lirc\setup\ir-remote.conf" />
+    <None Include="Lirc\setup\lirc_options.conf" />
+    <None Include="Proxy\setup\proxy.conf" />
+    <None Include="thing-compose.yml" />
     <None Include="docker-compose.yml" />
-    <None Include="proxy.Dockerfile" />
+    <None Include="Proxy\proxy.Dockerfile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+    <Folder Include="Proxy\NewFolder1\" />
+    <Folder Include="Proxy\NewFolder\" />
   </ItemGroup>
 </Project>

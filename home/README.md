@@ -18,7 +18,7 @@ image: josemottalopes/home-web
 image: josemottalopes/home-ui
 
 **Links:**  
-https://app.swaggerhub.com/apis/motta/home/1.0.1  
+https://app.swaggerhub.com/apis/motta/home/1.0.2  
 https://hub.docker.com/r/josemottalopes/home-web/  
 https://hub.docker.com/r/josemottalopes/home-ui/  
 
