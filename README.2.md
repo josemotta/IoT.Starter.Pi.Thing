@@ -18,7 +18,7 @@ This project develops microservices based on API First Design, targeting Raspber
 
 As we experienced at [Lumi]((https://github.com/josemotta/IoT.Starter.Pi/wiki/4.-IoT.Starter.Pi.Lumi)) episode, after each change on the API, SwaggerHub automatically generates updated code for `home-web` with corresponding web service infrastructure. The `Thing` has also `home-ui` and `nginx-proxy` images, handling respectively user interface and SSL security. They all run in separate docker containers, cooperating and sharing common resources with a host powered by Raspberry Pi with Linux & .NET Core. 
 
-The solution builds fast and efficiently at a speedy x64 machine equipped with Windows 10 and Visual Studio 2017. The docker-compose `build` command follows the steps from each `dockerfile`, generating docker images that are finally pushed to DockerHub registry:
+The solution builds fast and efficiently at a speedy x64 machine equipped with Windows 10 and Visual Studio 2017. The docker-compose `build` command follows the steps from each `dockerfile`, generating the images that are finally pushed to DockerHub registry:
 
 - [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/)
 - [home-web](https://hub.docker.com/r/josemottalopes/home-web/) (or [home-web-ir](https://hub.docker.com/r/josemottalopes/home-web-ir/))
