@@ -115,7 +115,7 @@ Unfortunately, this old version has issues with latest RPI binaries and is not r
 	Removing docker-compose (1.8.0-2) ...
 	Processing triggers for man-db (2.7.6.1-2) ...
 
-Considering that docker-compose is still needed, J‑C Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI and generated the binary file.
+Considering that docker-compose is definitely needed, J‑C Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI and generated the binary file.
 
 Next step is to copy `docker-compose` binary to `/usr/local/bin` and update its settings:
 
