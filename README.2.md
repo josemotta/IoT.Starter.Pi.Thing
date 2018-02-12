@@ -24,7 +24,7 @@ The solution builds fast and efficiently at a speedy x64 machine equipped with W
 - [home-web](https://hub.docker.com/r/josemottalopes/home-web/) (or [home-web-ir](https://hub.docker.com/r/josemottalopes/home-web-ir/))
 - [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)
 
-At Raspberry Pi side, we experienced that running each container manually is still somewhat time consuming. The mission now is to take `IoT.Starter.Pi.Thing` a step further with docker-composer `up` command.  This way, the `docker-compose.yml` file from the `build` phase at x64 machine can also be used to load images, create containers, establish relationships, and run them all at Raspberry Pi side.
+At Raspberry Pi side, we experienced that running each container manually is still somewhat time consuming. The mission now is to take `IoT.Starter.Pi.Thing` a step further with docker-composer `up` command.  This way, the `docker-compose.yml` file, from the `build` phase at x64 machine, can also be used to load images, create containers, establish relationships, and run them all at Raspberry Pi side.
 
 ## Get docker-composer for RPI
 
