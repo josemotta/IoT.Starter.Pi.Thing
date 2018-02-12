@@ -130,7 +130,7 @@ Finally, confirm which docker-compose version is installed:
 	CPython version: 2.7.13
 	OpenSSL version: OpenSSL 1.0.1t  3 May 2016
 
-A known issue is that using this same binary at RPI Zero returns an segment fault error. It is necessary to check what happens in this case. 
+A known issue is that using this same binary with RPI Zero returns an segment fault error. It is necessary further checks to figure out what happens in this case. 
 
 ## Automatic operation
 
