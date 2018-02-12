@@ -28,7 +28,7 @@ At Raspberry Pi side, we experienced that running each container manually is sti
 
 ## Get docker-composer for RPI
 
-Just installing docker is not necessary to run docker-compose, as we can check below.
+Please note that installing docker is not enough to run docker-compose, as we can check below.
 
 	pi@zuni:~ $ docker version
 	Client:
