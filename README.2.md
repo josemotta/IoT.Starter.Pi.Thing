@@ -28,7 +28,7 @@ At Raspberry Pi side, we experienced that running each container manually is sti
 
 ## Get docker-composer for RPI
 
-Please note that installing docker is not enough to run docker-compose, as we can check below.
+Please note that installing docker is not enough to run docker-compose at RPI, as we can check below.
 
 	pi@zuni:~ $ docker version
 	Client:
@@ -50,6 +50,7 @@ Please note that installing docker is not enough to run docker-compose, as we ca
 	  Built:        Wed Feb  7 21:20:13 2018
 	  OS/Arch:      linux/arm
 	  Experimental: false
+
 	pi@zuni:~ $ docker-compose version
 	-bash: docker-compose: command not found
 
