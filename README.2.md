@@ -66,13 +66,9 @@ According to log below, this path results on docker-compose `version 1.8.0` bein
 	Reading state information... Done
 	The following additional packages will be installed:
 	  libyaml-0-2 python-backports.ssl-match-hostname python-cached-property python-cffi-backend python-chardet python-cryptography python-docker python-dockerpty python-docopt
-	  python-enum34 python-funcsigs python-functools32 python-idna python-ipaddress python-jsonschema python-mock python-openssl python-pbr python-pkg-resources python-pyasn1
-	  python-requests python-setuptools python-six python-texttable python-urllib3 python-websocket python-yaml python3-pkg-resources
-	Suggested packages:
-	  python-cryptography-doc python-cryptography-vectors python-enum34-doc python-funcsigs-doc python-mock-doc python-openssl-doc python-openssl-dbg doc-base python-socks
-	  python-setuptools-doc python-ntlm python3-setuptools
-	Recommended packages:
-	  docker.io
+
+	...
+
 	The following NEW packages will be installed:
 	  docker-compose libyaml-0-2 python-backports.ssl-match-hostname python-cached-property python-cffi-backend python-chardet python-cryptography python-docker python-dockerpty
 	  python-docopt python-enum34 python-funcsigs python-functools32 python-idna python-ipaddress python-jsonschema python-mock python-openssl python-pbr python-pkg-resources
@@ -81,7 +77,6 @@ According to log below, this path results on docker-compose `version 1.8.0` bein
 	Need to get 1,860 kB of archives.
 	After this operation, 8,564 kB of additional disk space will be used.
 	Do you want to continue? [Y/n] y
-	Get:1 http://raspbian.c3sl.ufpr.br/raspbian stretch/main armhf python-pkg-resources all 33.1.1-1 [166 kB]
 
 	...  
 
@@ -117,7 +112,7 @@ Unfortunately, this old version has issues with latest RPI binaries and is not r
 
 Considering that docker-compose is definitely needed, JC Berthon shows the ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do the build for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI and the binary file was generated.
 
-Next step is to copy `docker-compose` binary to `/usr/local/bin` and update its settings:
+Next step is to copy the new `docker-compose` binary to `/usr/local/bin` and update its settings:
 
 	$ cp docker-compose /usr/local/bin
 	$ chown root:root /usr/local/bin/docker-compose
@@ -127,7 +122,7 @@ Next step is to copy `docker-compose` binary to `/usr/local/bin` and update its 
 	total 7052
 	-rwxr-xr-x 1 root root 7218664 Feb 12 19:06 docker-compose
 
-We can confirm the docker-compose version installed: 
+Finally, confirm which docker-compose version is installed: 
 
 	pi@lumi:~ $ docker-compose version
 	docker-compose version 1.19.0-rc2, build dfcb02c
@@ -137,9 +132,9 @@ We can confirm the docker-compose version installed:
 
 A known issue is that using this same binary at RPI Zero returns an segment fault error. It is necessary to check what happens in this case. 
 
-## Manual operation
+## Automatic operation
 
-## Automated operation
+
 
 ### Pull everything 
 
