@@ -95,7 +95,7 @@ Following is the log, please note that docker-compose `version 1.8.0` is install
 	CPython version: 2.7.13
 	OpenSSL version: OpenSSL 1.1.0f  25 May 2017
 
-Unfortunately, this version has issues with latest RPI binaries and is not reliable. Do not install it. If you already did it, the solution is removing, as shown below.
+Unfortunately, this old version has issues with latest RPI binaries and is not reliable. If it is already installed, you can remove it, as shown below.
 
 	pi@zuni:~ $ sudo apt-get remove docker-compose
 	Reading package lists... Done
@@ -114,9 +114,6 @@ Unfortunately, this version has issues with latest RPI binaries and is not relia
 	(Reading database ... 35540 files and directories currently installed.)
 	Removing docker-compose (1.8.0-2) ...
 	Processing triggers for man-db (2.7.6.1-2) ...
-
-	pi@zuni:~ $ docker-compose version
-	-bash: /usr/bin/docker-compose: No such file or directory
 
 Considering that docker-compose is still needed, J‑C Berthon showed a ["easy way"](https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/) to do it for yourself. I tried it successfully with a RPI 2 model B,  and after a long run the latest docker-compose was built at RPI and generated the binary file.
 
