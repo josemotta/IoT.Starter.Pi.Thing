@@ -38,6 +38,4 @@ The code will keep evolving `IoT.Starter.Pi.Thing` embryos powered by open API a
 | user interface     | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)       | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)      |  
 | web service  | [home-web](https://hub.docker.com/r/josemottalopes/home-web/)       | [home-web-ir](https://hub.docker.com/r/josemottalopes/home-web-ir/)      | 
 
-Please comment, fork the repos and use docker images to start nice IoT projects!
-
 Have fun!
