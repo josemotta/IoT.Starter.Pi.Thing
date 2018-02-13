@@ -226,7 +226,7 @@ The results are shown below with all three images stopped and removed:
 
 ## Conclusion
 
-The `[IoT.Starter.Pi.Thing](https://github.com/josemotta/IoT.Starter.Pi.Thing)` repository was revised with latest improvements and is ready for starting right now your IoT initiatives.
+The [IoT.Starter.Pi.Thing](https://github.com/josemotta/IoT.Starter.Pi.Thing) repository was revised with latest improvements and is ready for starting right now your IoT initiatives.
 
 Have fun!
 
