@@ -26,7 +26,7 @@ The solution builds fast and efficiently at a speedy x64 machine equipped with W
 
 At Raspberry Pi side, we experienced that running each container manually is still somewhat time consuming. The mission now is to take `IoT.Starter.Pi.Thing` a step further with docker-composer `up` command.  This way, the same `docker-compose.yml` file, used to orchestrate the `build` phase at x64 machine, can also be the reference to load images, create containers, establish relationships, and run them all at Raspberry Pi side.
 
-## Get docker-composer for RPI
+## Installing docker-composer
 
 Please note that installing docker is not enough to run docker-compose at RPI, as we can check below.
 
@@ -132,19 +132,26 @@ Finally, confirm which docker-compose version is installed:
 
 A known issue is that this same binary with RPI Zero returns error. Further checks are necessary to figure out what happens in this case.
 
-## Automatic operation
+## Operation with docker-compose
 
+As shown by Viktor Adam in his [tutorial](https://blog.viktoradam.net/2018/01/05/home-lab-part-2-docker-setup/), you can commit the `docker-compose.yml` file into Git repository and set up basic automation to update the services whenever something changes.
 
+	$ cd /to/your/cloned/folder
+	$ git pull
+	$ docker-compose pull
+	$ docker-compose up -d
 
-### Pull everything 
+Then the `IoT.Starter.Pi.Thing` repository is cloned to a RPI folder, using Git `clone`, as shown below:
 
-	pi@lumi:/git/IoT.Starter.Pi/home $ docker-compose down
-	Stopping home-ui     ... done
-	Stopping home-web-ir ... done
-	Removing home-ui     ... done
-	Removing ssl-proxy   ... done
-	Removing home-web-ir ... done
-	pi@lumi:/git/IoT.Starter.Pi/home $ docker-compose pull
+	git clone git@github.com:josemotta/IoT.Starter.Pi.Thing.git
+
+Now, pulling the latest images from DockerHub is very simple:
+
+	docker-compose -f lumi-compose.yml pull
+
+Please see the live action below, showing all three images being updated:
+
+	root@lumi:~/IoT.Starter.Pi.Thing/home# docker-compose -f lumi-compose.yml pull
 	Pulling home.ui (josemottalopes/home-ui:latest)...
 	latest: Pulling from josemottalopes/home-ui
 	0d9fbbfaa2cd: Already exists
@@ -157,8 +164,20 @@ A known issue is that this same binary with RPI Zero returns error. Further chec
 	Status: Downloaded newer image for josemottalopes/home-ui:latest
 	Pulling io.swagger (josemottalopes/home-web-ir:latest)...
 	latest: Pulling from josemottalopes/home-web-ir
-	Digest: sha256:84abec4f3e41d0c1456ec3904fb541affe05e92ccc7377e180b566343cd8cd54
-	Status: Image is up to date for josemottalopes/home-web-ir:latest
+	0d9fbbfaa2cd: Already exists
+	b015fdc7d33a: Already exists
+	60aaa226f085: Already exists
+	01963091a185: Already exists
+	f5f67e021814: Pull complete
+	b640e21d6d61: Pull complete
+	b81fd5b12fb6: Pull complete
+	b0409530900f: Pull complete
+	6e417e6af42e: Pull complete
+	db68a213ab98: Pull complete
+	9d099602a010: Pull complete
+	0ff2feee3ab1: Pull complete
+	Digest: sha256:b378ca3b49b49e9e14111cf165eaf182ffd97b8f8c8720722cebde13a2ed13e8
+	Status: Downloaded newer image for josemottalopes/home-web-ir:latest
 	Pulling ssl.proxy (josemottalopes/nginx-proxy:latest)...
 	latest: Pulling from josemottalopes/nginx-proxy
 	cd8b673adb84: Already exists
@@ -170,27 +189,40 @@ A known issue is that this same binary with RPI Zero returns error. Further chec
 	54c0a006ff47: Pull complete
 	Digest: sha256:3a57fb01ca10858cbfc7f1b78e7fc4ea33d772a5d4ead67ff9dcbc84b24a417d
 	Status: Downloaded newer image for josemottalopes/nginx-proxy:latest
-	pi@lumi:/git/IoT.Starter.Pi/home $ docker-compose up
-	WARNING: The Docker Engine you're using is running in swarm mode.
-	
-	Compose does not use swarm mode to deploy services to multiple nodes in a swarm. All containers will be scheduled on the current node.
-	
-	To deploy your application across the swarm, use `docker stack deploy`.
-	
-	Creating home-ui ... done
+
+Just one command more is necessary to create and start all three containers:
+
+	docker-compose -f lumi-compose.yml pull
+
+Please see the log below:
+
+	root@lumi:~/IoT.Starter.Pi.Thing/home# docker-compose -f lumi-compose.yml up -d
+	Creating home-web-ir ... done
 	Creating home-web-ir ...
 	Creating home-ui ...
-	Attaching to ssl-proxy, home-web-ir, home-ui
-	home-ui       | warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-	home-ui       |       No XML encryptor configured. Key {baa3a8ed-f5c6-4849-8bcb-15c43877c216} may be persisted to storage in unencrypted form.
-	home-web-ir   | Hosting environment: Release
-	home-web-ir   | Content root path: /app
-	home-web-ir   | Now listening on: http://[::]:5010
-	home-web-ir   | Application started. Press Ctrl+C to shut down.
-	home-ui       | Hosting environment: Release
-	home-ui       | Content root path: /app
-	home-ui       | Now listening on: http://[::]:80
-	home-ui       | Application started. Press Ctrl+C to shut down.
+
+	root@lumi:~# docker ps
+	CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                            NAMES
+	a45f1330c167        josemottalopes/home-web-ir   "dotnet IO.Swagger.dâ¦"   23 minutes ago      Up 23 minutes       0.0.0.0:32779->5010/tcp          home-web-ir
+	24b675650f1a        josemottalopes/home-ui       "dotnet Home.UI.dll"     23 minutes ago      Up 23 minutes       0.0.0.0:32777->80/tcp            home-ui
+	dbb14cc24bf2        josemottalopes/nginx-proxy   "nginx -g 'daemon ofâ¦"   23 minutes ago      Up 23 minutes       80/tcp, 0.0.0.0:32778->443/tcp   ssl-proxy
+
+To stop and remove the containers from memory is also very simple:
+
+	docker-compose -f lumi-compose.yml down
+
+The result log is shown below with all three images stopped and removed:
+
+	root@lumi:~/IoT.Starter.Pi.Thing/home# docker-compose -f lumi-compose.yml down
+	Stopping home-web-ir ... done
+	Stopping home-ui     ... done
+	Stopping ssl-proxy   ... done
+	Removing home-web-ir ... done
+	Removing home-ui     ... done
+	Removing ssl-proxy   ... done
+	
+	root@lumi:~/IoT.Starter.Pi.Thing/home# docker ps
+	CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
 ## Conclusion
 
