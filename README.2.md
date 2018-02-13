@@ -149,7 +149,7 @@ Now, pulling the latest images from DockerHub is very simple with docker-compose
 
 	docker-compose -f lumi-compose.yml pull
 
-Please see at the live action below that all three images are being updated:
+Please see at the live action below that all three images are being updated to `latest` version stored at DockerHub:
 
 	root@lumi:~/IoT.Starter.Pi.Thing/home# docker-compose -f lumi-compose.yml pull
 	Pulling home.ui (josemottalopes/home-ui:latest)...
