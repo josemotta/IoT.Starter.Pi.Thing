@@ -134,22 +134,22 @@ A known issue is that this same binary with RPI Zero returns error. Further chec
 
 ## Operation with docker-compose
 
-As shown by Viktor Adam in his [tutorial](https://blog.viktoradam.net/2018/01/05/home-lab-part-2-docker-setup/), you can commit the `docker-compose.yml` file into Git repository and set up basic automation to update the services whenever something changes.
+As shown by Viktor Adam in his [tutorial](https://blog.viktoradam.net/2018/01/05/home-lab-part-2-docker-setup/), the `docker-compose.yml` file inside Git repository allows a basic automation sequence to update the microservices whenever something changes.
 
 	$ cd /to/your/cloned/folder
 	$ git pull
 	$ docker-compose pull
 	$ docker-compose up -d
 
-Then the `IoT.Starter.Pi.Thing` repository is cloned to a RPI folder, using Git `clone`, as shown below:
+The `IoT.Starter.Pi.Thing` repository is cloned to a RPI folder, as shown below:
 
 	git clone git@github.com:josemotta/IoT.Starter.Pi.Thing.git
 
-Now, pulling the latest images from DockerHub is very simple:
+Now, pulling the latest images from DockerHub is very simple with docker-compose `pull`:
 
 	docker-compose -f lumi-compose.yml pull
 
-Please see the live action below, showing all three images being updated:
+Please see at the live action below that all three images are being updated:
 
 	root@lumi:~/IoT.Starter.Pi.Thing/home# docker-compose -f lumi-compose.yml pull
 	Pulling home.ui (josemottalopes/home-ui:latest)...
@@ -211,7 +211,7 @@ To stop and remove the containers from memory is also very simple:
 
 	docker-compose -f lumi-compose.yml down
 
-The result log is shown below with all three images stopped and removed:
+The results are shown below with all three images stopped and removed:
 
 	root@lumi:~/IoT.Starter.Pi.Thing/home# docker-compose -f lumi-compose.yml down
 	Stopping home-web-ir ... done
