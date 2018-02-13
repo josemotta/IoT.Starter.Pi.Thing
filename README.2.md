@@ -226,17 +226,10 @@ The results are shown below with all three images stopped and removed:
 
 ## Conclusion
 
+The `[IoT.Starter.Pi.Thing](https://github.com/josemotta/IoT.Starter.Pi.Thing)` repository was revised with latest improvements and is ready for starting right now your IoT initiatives.
+
 Have fun!
 
 ---
 Also published at [Code Project](https://www.codeproject.com/Articles/1224347/IoT-Starter-Raspberry-Pi-Thing)
 
-
-
-
-
-
-# IoT.Starter.Pi
-An embryo for Home Intelligence using Raspberry Pi with Linux & .NET Core 2.
-
-https://blog.viktoradam.net/2018/01/05/home-lab-part-2-docker-setup/
