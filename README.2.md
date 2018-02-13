@@ -134,7 +134,7 @@ A known issue is that this same binary with RPI Zero returns error. Further chec
 
 ## Operation with docker-compose
 
-As shown by Viktor Adam in his [tutorial](https://blog.viktoradam.net/2018/01/05/home-lab-part-2-docker-setup/), the `docker-compose.yml` file inside Git repository allows a basic automation sequence to update the microservices whenever something changes.
+As shown by Viktor Adam in his [tutorial](https://blog.viktoradam.net/2018/01/05/home-lab-part-2-docker-setup/), the `docker-compose.yml` file inside Git repository allows a basic automation to update the microservices whenever something changes.
 
 	$ cd /to/your/cloned/folder
 	$ git pull
