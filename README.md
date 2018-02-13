@@ -16,7 +16,7 @@ This project develops microservices based on API First Design, targeting Raspber
 
 5. [**IoT.Starter.Pi.Compose**](https://github.com/josemotta/IoT.Starter.Pi.Thing/wiki/5.-IoT.Starter.Pi.Compose): At Raspberry Pi side, running each container separately is still somewhat time consuming. Taking `Thing` a step further, docker-composer `up` is used to load images, create containers, relationships, and run them all.
 
-After each change on the [API](https://app.swaggerhub.com/apis/motta/home), SwaggerHub automatically generates updated code for `home-web` with corresponding web service infrastructure. The `Thing` has also `home-ui` and `nginx-proxy` images, handling respectively user interface and SSL security. They all run in separate docker containers, cooperating and sharing common resources with a host powered by Raspberry Pi with Linux & .NET Core. 
+After each change on the [API](https://app.swaggerhub.com/apis/motta/home), SwaggerHub automatically generates updated code for `home-web` with corresponding web service. The `Thing` has also `home-ui` and `nginx-proxy` images, handling respectively user interface and SSL security. They all run in separate docker containers, cooperating and sharing common resources with a host powered by Raspberry Pi with Linux & .NET Core. 
 
 The solution builds fast and efficiently at a speedy x64 machine equipped with Windows 10 and Visual Studio 2017. The docker-compose `build` command follows the steps from each `dockerfile`, generating the images below that are finally pushed to DockerHub registry:
 
