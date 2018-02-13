@@ -207,7 +207,7 @@ Please see the log below:
 	24b675650f1a        josemottalopes/home-ui       "dotnet Home.UI.dll"     23 minutes ago      Up 23 minutes       0.0.0.0:32777->80/tcp            home-ui
 	dbb14cc24bf2        josemottalopes/nginx-proxy   "nginx -g 'daemon ofâ¦"   23 minutes ago      Up 23 minutes       80/tcp, 0.0.0.0:32778->443/tcp   ssl-proxy
 
-To stop and remove the containers from memory is also very simple:
+To stop and remove all containers from memory is also very simple:
 
 	docker-compose -f lumi-compose.yml down
 
