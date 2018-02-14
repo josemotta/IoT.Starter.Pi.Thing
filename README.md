@@ -14,7 +14,7 @@ This project develops microservices based on API First Design, targeting Raspber
 
 4. [**IoT.Starter.Pi.Lumi**](https://github.com/josemotta/IoT.Starter.Pi.Thing/wiki/4.-IoT.Starter.Pi.Lumi): At this complement of the third part, the API and corresponding web service is extended to consider IR remotes and their respective codes. 
 
-5. [**IoT.Starter.Pi.Compose**](https://github.com/josemotta/IoT.Starter.Pi.Thing/wiki/5.-IoT.Starter.Pi.Compose): At Raspberry Pi side, running each container separately is still somewhat time consuming. Taking `Thing` a step further, docker-composer `up` is used to load images, create containers, relationships, and run them all.
+5. [**IoT.Starter.Pi.Compose**](https://github.com/josemotta/IoT.Starter.Pi.Thing/wiki/5.-IoT.Starter.Pi.Compose): At Raspberry Pi side, running each container separately is still somewhat time consuming. Taking `Thing` a step further, docker-composer `up` is used to load images, create containers &  relationships, and run them all.
 
 After each change on the [API](https://app.swaggerhub.com/apis/motta/home), SwaggerHub automatically generates updated code for `home-web` with corresponding web service. The `Thing` has also `home-ui` and `nginx-proxy` images, handling respectively user interface and SSL security. They all run in separate docker containers, cooperating and sharing common resources with a host powered by Raspberry Pi with Linux & .NET Core. 
 
