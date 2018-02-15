@@ -26,7 +26,7 @@ The solution builds fast and efficiently at a speedy x64 machine equipped with W
 
 At Raspberry Pi, running each container manually is somewhat time consuming. Taking  `IoT.Starter.Pi.Thing` a step further with docker-composer `up` command, the same `docker-compose.yml` file, used at `build` phase by x64 machine, is reused to load images, create containers, establish their relationships, and run them all. This time at Raspberry Pi side.
 
-The code will keep evolving `IoT.Starter.Pi.Thing` embryos powered by open API and [IoT starter](https://github.com/josemotta/IoT.Starter.Np2.Core) concepts. 
+The code will keep evolving `IoT.Starter.Pi.Thing` embryos powered by open API First Design and [IoT starter](https://github.com/josemotta/IoT.Starter.Np2.Core) concepts. 
 
 ## IOT STARTER
 
