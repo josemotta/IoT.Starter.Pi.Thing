@@ -15,8 +15,8 @@
 |   | [Proxy/proxy.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/Proxy/proxy.Dockerfile)     | [Proxy/proxy.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/Proxy/proxy.Dockerfile)     |  
 | **user interface**     | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)       | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)      |  
 |      | [src/Home.UI/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/Home.UI/pi.Dockerfile)       | [src/Home.UI/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/Home.UI/pi.Dockerfile)       |  
+| compose file  | [home/thing-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/thing-compose.yml) |  [home/lumi-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/lumi-compose.yml) |  
 | Commands:  |  |   |  
-| - compose  | [home/thing-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/thing-compose.yml) |  [home/lumi-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/lumi-compose.yml) |  
 | - build | docker-compose -f thing-compose.yml build |  docker-compose -f lumi-compose.yml build |
 | - push  | docker-compose -f thing-compose.yml push |  docker-compose -f lumi-compose.yml push |    
 |   |  |   |  
