@@ -16,12 +16,12 @@
 | **user interface**     | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)       | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)      |  
 |      | [src/Home.UI/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/Home.UI/pi.Dockerfile)       | [src/Home.UI/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/Home.UI/pi.Dockerfile)       |  
 | compose file  | [home/thing-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/thing-compose.yml) |  [home/lumi-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/lumi-compose.yml) |  
-| Commands:  |  |   |  
+| commands:  |  |   |  
 | - build | docker-compose -f thing-compose.yml build |  docker-compose -f lumi-compose.yml build |
 | - push  | docker-compose -f thing-compose.yml push |  docker-compose -f lumi-compose.yml push |    
 |   |  |   |  
 | **At Raspberry Pi**  |  |   |  
-| Commands:  |  |   |  
+| commands:  |  |   |  
 | update to latest | docker-compose -f thing-compose.yml pull |  docker-compose -f lumi-compose.yml pull |    
 | run | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
 | stop & remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
