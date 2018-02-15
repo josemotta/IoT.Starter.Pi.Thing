@@ -3,7 +3,7 @@
 ### Code for Raspberry Pi with Linux
 
 |   | **[IoT.Starter.Pi.Thing](https://github.com/josemotta/IoT.Starter.Pi.Thing)** | **[IoT.Starter.Pi.Lumi](https://github.com/josemotta/IoT.Starter.Pi.Lumi)** |  
-| :---         |     :---:      |          :---: |  
+| :---         |     :---      |          :--- |  
 |   |  |   |  
 | useful for  | all projects |  infrared (IR) projects |  
 | description | embryo for IoT | IR embryo for IoT, powered by Lirc | 
