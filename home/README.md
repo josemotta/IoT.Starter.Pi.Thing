@@ -20,7 +20,7 @@
 |   |  |   |  
 | **At Raspberry Pi**  |  |   |  
 | run command | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
-| stop & remove command  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
+| stop & remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
 
 ### Code for x64 with Windows 10
 
