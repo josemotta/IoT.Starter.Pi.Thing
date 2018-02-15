@@ -8,21 +8,22 @@
 | useful for  | all projects |  infrared (IR) projects |  
 | description | embryo for IoT | IR embryo for IoT, powered by Lirc | 
 |   |  |   |  
-| **At speedy x64 machine**  |  |   |  
+| **At x64 machine**  |  |   |  
 | **web service**  | [home-web](https://hub.docker.com/r/josemottalopes/home-web/)       | [home-web-ir](https://hub.docker.com/r/josemottalopes/home-web-ir/)      | 
 |  | [src/IO.Swagger/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/IO.Swagger/pi.Dockerfile)       | [Lirc/lumi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/Lirc/lumi.dockerfile/)      | 
 | **ssl proxy**   | [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/)     | [nginx-proxy](https://hub.docker.com/r/josemottalopes/nginx-proxy/)    |  
 |   | [Proxy/proxy.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/Proxy/proxy.Dockerfile)     | [Proxy/proxy.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/Proxy/proxy.Dockerfile)     |  
 | **user interface**     | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)       | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)      |  
 |      | [src/Home.UI/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/Home.UI/pi.Dockerfile)       | [src/Home.UI/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/Home.UI/pi.Dockerfile)       |  
-| Commands  |  |   |  
-| compose  | [home/thing-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/thing-compose.yml) |  [home/lumi-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/lumi-compose.yml) |  
-| build command | docker-compose -f thing-compose.yml build |  docker-compose -f lumi-compose.yml build |
-| push command | docker-compose -f thing-compose.yml push |  docker-compose -f lumi-compose.yml push |    
+| Commands:  |  |   |  
+| - compose  | [home/thing-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/thing-compose.yml) |  [home/lumi-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/lumi-compose.yml) |  
+| - build | docker-compose -f thing-compose.yml build |  docker-compose -f lumi-compose.yml build |
+| - push  | docker-compose -f thing-compose.yml push |  docker-compose -f lumi-compose.yml push |    
 |   |  |   |  
 | **At Raspberry Pi**  |  |   |  
+| Commands:  |  |   |  
 | update to latest | docker-compose -f thing-compose.yml pull |  docker-compose -f lumi-compose.yml pull |    
-| run command | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
+| run | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
 | stop & remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
 
 ### Code for x64 with Windows 10
