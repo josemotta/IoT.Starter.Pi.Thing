@@ -30,7 +30,7 @@ The code will keep evolving `IoT.Starter.Pi.Thing` embryos powered by open API a
 
 ## IOT STARTER
 
-| IoT starter  | **Thing** | **Thing IR** |  
+| IoT starter  | **Thing** | **Thing-IR** |  
 | :---         |     :---:      |          :---: |  
 | useful for  | all IoT projects |  infrared (IR) IoT projects |  
 | description | embryo for IoT | IR embryo for IoT, powered by Lirc | 
