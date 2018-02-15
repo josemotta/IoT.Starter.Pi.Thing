@@ -36,8 +36,8 @@ home-ui: src/Home.UI/Dockerfile
 Build all images and push them to DockerHub using a couple commands:
 
 	# build for Thing
-	$ docker-compose -f lumi-compose.yml build
-	$ docker-compose -f lumi-compose.yml push
+	$ docker-compose -f thing-compose.yml build
+	$ docker-compose -f thing-compose.yml push
 
 	# build for Thing-IR with infrared support
 	$ docker-compose -f lumi-compose.yml build
