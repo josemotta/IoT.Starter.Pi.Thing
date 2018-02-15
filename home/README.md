@@ -1,18 +1,5 @@
 # Build & push images
 
-## At x64 machine
-
-Build id accomplished at a speedy x64 machine with Windows 10 and Visual Studio 2017.
-
-### Code for x64 with Windows 10
-
-Use Visual Studio 2017 default building scheme.
-
-#### docker-compose.yml  
-
-home-web: src/IO.Swagger/Dockerfile  
-home-ui: src/Home.UI/Dockerfile  
-
 ### Code for Raspberry Pi with Linux
 
 |   | **[IoT.Starter.Pi.Thing](https://github.com/josemotta/IoT.Starter.Pi.Thing)** | **[IoT.Starter.Pi.Lumi](https://github.com/josemotta/IoT.Starter.Pi.Lumi)** |  
@@ -33,42 +20,17 @@ home-ui: src/Home.UI/Dockerfile
 | **Raspberry Pi**  |  |   |  
 | run  | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
 | remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
-| :---         |     :---:      |          :---: |  
 
+### Code for x64 with Windows 10
 
-#### Build 
+Use Visual Studio 2017 default building scheme.
 
-Web Server for Home project at port:5010
+#### docker-compose.yml  
 
-#### x64: Build 
+home-web: src/IO.Swagger/Dockerfile  
+home-ui: src/Home.UI/Dockerfile  
 
-	cd home
-	docker-compose -f pi.docker-compose.yml build   
-	docker push josemottalopes/home-web:latest  
-
-#### arm: RaspberryPi (hostname "rpi")  
-`docker run --privileged -p 5010:5010 -d josemottalopes/home-web`  
-
-#### any browser: Client Test
-    http://rpi:5010/swagger/
-
-## Building home-ui
-
-Web UI for Home project at port:80
-
-#### x64: Build 
-
-	cd home
-	docker-compose -f pi.docker-compose.yml build   
-	docker push josemottalopes/home-ui:latest  
-
-#### arm: RaspberryPi (hostname "rpi")  
-`docker run --privileged -p 80:80 -d josemottalopes/home-ui:latest`  
-
-#### any browser: Client Test
-    http://rpi/
-
-## Typical build & push
+## Typical build & push at x64 machine
 
 	jo@CANOAS24 MINGW64 /c/_git/IoT.Starter.Pi.Thing (master)
 	$ cd home
