@@ -19,6 +19,7 @@ home-ui: src/Home.UI/Dockerfile
 | :---         |     :---:      |          :---: |  
 | useful for  | all projects |  infrared (IR) projects |  
 | description | embryo for IoT | IR embryo for IoT, powered by Lirc | 
+| **speedy x64 machine**  |  |   |  
 | docker-compose  | [home/thing-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/thing-compose.yml) |  [home/lumi-compose.yml](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/lumi-compose.yml) |  
 | web service  | [home-web](https://hub.docker.com/r/josemottalopes/home-web/)       | [home-web-ir](https://hub.docker.com/r/josemottalopes/home-web-ir/)      | 
 |  | [src/IO.Swagger/pi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/src/IO.Swagger/pi.Dockerfile)       | [Lirc/lumi.Dockerfile](https://github.com/josemotta/IoT.Starter.Pi.Thing/blob/master/home/Lirc/lumi.dockerfile/)      | 
@@ -29,8 +30,7 @@ home-ui: src/Home.UI/Dockerfile
 | build  | docker-compose -f thing-compose.yml build |  docker-compose -f lumi-compose.yml build |
 | push  | docker-compose -f thing-compose.yml push |  docker-compose -f lumi-compose.yml push |    
 |   |  |   |  
-| :---         |     :---:      |          :---: |  
-| Raspberry Pi  |  |   |  
+| **Raspberry Pi**  |  |   |  
 | run  | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
 | remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
 | :---         |     :---:      |          :---: |  
