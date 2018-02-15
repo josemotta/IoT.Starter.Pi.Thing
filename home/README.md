@@ -19,7 +19,7 @@
 | push command | docker-compose -f thing-compose.yml push |  docker-compose -f lumi-compose.yml push |    
 |   |  |   |  
 | **At Raspberry Pi**  |  |   |  
-| Update latest | docker-compose -f thing-compose.yml pull |  docker-compose -f lumi-compose.yml pull |    
+| update to latest | docker-compose -f thing-compose.yml pull |  docker-compose -f lumi-compose.yml pull |    
 | run command | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
 | stop & remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
 
