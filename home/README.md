@@ -1,4 +1,4 @@
-# Build & Push IoT Starter
+# IoT Starter Pi Thing
 
 ### Code for Raspberry Pi with Linux
 
