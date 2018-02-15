@@ -785,4 +785,3 @@ Below is a typical build & push session:
 	2c844972db4f: Mounted from arm32v7/nginx
 	latest: digest: sha256:561b8f0e03150d6a73c106079bf28a3330a9f2d87262d8ab855acfc52b1f7239 size: 1777
 
-jo@CANOAS24 MINGW64 /c/_git/IoT.Starter.Pi.Thing/home (master)
