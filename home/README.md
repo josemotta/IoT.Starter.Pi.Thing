@@ -22,9 +22,9 @@
 |   |  |   |  
 | **At Raspberry Pi**  |  |   |  
 | commands:  |  |   |  
-| update to latest | docker-compose -f thing-compose.yml pull |  docker-compose -f lumi-compose.yml pull |    
-| run | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
-| stop & remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
+| - update | docker-compose -f thing-compose.yml pull |  docker-compose -f lumi-compose.yml pull |    
+| - run | docker-compose -f thing-compose.yml up -d |  docker-compose -f lumi-compose.yml up -d |    
+| - stop/remove  | docker-compose -f thing-compose.yml down |  docker-compose -f lumi-compose.yml down |    
 
 ### Code for x64 with Windows 10
 
