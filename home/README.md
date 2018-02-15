@@ -2,7 +2,7 @@
 
 ### Code for Raspberry Pi with Linux
 
-| `IoT Starter`  | **[IoT.Starter.Pi.Thing](https://github.com/josemotta/IoT.Starter.Pi.Thing)** | **[IoT.Starter.Pi.Lumi](https://github.com/josemotta/IoT.Starter.Pi.Lumi)** |  
+| `IoT Starter`  | **Thing** | **Thing-IR** |  
 | :---         |     :---      |          :--- |  
 |   |  |   |  
 | useful for  | all projects |  infrared (IR) projects |  
