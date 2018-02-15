@@ -1,4 +1,4 @@
-# Build & push images
+# Build & Push
 
 ### Code for Raspberry Pi with Linux
 
@@ -24,14 +24,21 @@
 
 ### Code for x64 with Windows 10
 
-Use Visual Studio 2017 default building scheme.
+Use Visual Studio 2017 default building and run scheme to test code at x64 machine.
 
 #### docker-compose.yml  
 
 home-web: src/IO.Swagger/Dockerfile  
 home-ui: src/Home.UI/Dockerfile  
 
-## Typical build & push at x64 machine
+## Build & push linux-arm code at x64 machine
+
+Build all images and push them to DockerHub using a couple commands:
+
+	$ docker-compose -f lumi-compose.yml build
+	$ docker-compose -f lumi-compose.yml push
+
+Below is a typical build & push session:
 
 	jo@CANOAS24 MINGW64 /c/_git/IoT.Starter.Pi.Thing (master)
 	$ cd home
