@@ -38,3 +38,17 @@ The code will keep evolving `IoT.Starter.Pi.Thing` embryos powered by open API F
 | user interface     | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)       | [home-ui](https://hub.docker.com/r/josemottalopes/home-ui/)      |  
 | web service  | [home-web](https://hub.docker.com/r/josemottalopes/home-web/)       | [home-web-ir](https://hub.docker.com/r/josemottalopes/home-web-ir/)      | 
 
+## Memory
+
+After all three containers running at Raspberry Pi 2 model B with Linux, the report shown below shows more than 400 Mbytes free memory. By definition of IoT Starter concept, `IoT.Starter.Pi.Thing` comes with just basic stuff, ready to start the development of your IoT initiative. Then, this is the RAM amount available for `home-web` and `home-ui` growth.
+
+	pi@lumi:~ $ docker ps
+	CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                          NAMES
+	ae97ff490db3        josemottalopes/home-web-ir   "dotnet IO.Swagger.dâ¦"   18 hours ago        Up 18 hours         0.0.0.0:5010->5010/tcp         home-web-ir
+	d4c58be28387        josemottalopes/nginx-proxy   "nginx -g 'daemon ofâ¦"   18 hours ago        Up 18 hours         80/tcp, 0.0.0.0:443->443/tcp   ssl-proxy
+	00fc3028480f        josemottalopes/home-ui       "dotnet Home.UI.dll"     18 hours ago        Up 18 hours         0.0.0.0:80->80/tcp             home-ui
+
+	pi@lumi:~ $ free -h
+	              total        used        free      shared  buff/cache   available
+	Mem:           927M        179M        411M         58M        335M        639M
+	Swap:           99M          0B         99M
