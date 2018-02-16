@@ -52,3 +52,17 @@ After all three containers running at Raspberry Pi 2 model B with Linux, the `fr
 	              total        used        free      shared  buff/cache   available
 	Mem:           927M        179M        411M         58M        335M        639M
 	Swap:           99M          0B         99M
+
+As shown below by `df -h` command, the 15 GB disk mounted at Raspberry Pi 2 model B with Linux still have almost 10 GB free space.
+
+	pi@lumi:~ $ df -h
+	Filesystem      Size  Used Avail Use% Mounted on
+	/dev/root        15G  4.1G  9.5G  30% /
+	devtmpfs        460M     0  460M   0% /dev
+	tmpfs           464M     0  464M   0% /dev/shm
+	tmpfs           464M   13M  452M   3% /run
+	tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+	tmpfs           464M     0  464M   0% /sys/fs/cgroup
+	/dev/mmcblk0p1   42M   21M   21M  51% /boot
+	tmpfs            93M     0   93M   0% /run/user/1000
+
