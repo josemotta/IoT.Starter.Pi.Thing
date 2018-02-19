@@ -66,3 +66,5 @@ As shown by `df -h` command, the 15 GB disk mounted at Raspberry Pi 2 model B wi
 	/dev/mmcblk0p1   42M   21M   21M  51% /boot
 	tmpfs            93M     0   93M   0% /run/user/1000
 
+:star: *Please star this project if you find it useful!*
+
