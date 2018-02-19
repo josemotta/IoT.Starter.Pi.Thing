@@ -4,7 +4,7 @@
 
 ### Embryos for Home Intelligence using Raspberry Pi with Linux, Docker & .NET Core.
 
-:star: *Please star this project if you find it useful!*
+:star: *Please star if you find it useful!*
 
 This project develops microservices based on API First Design, targeting Raspberry Pi with Linux. In order to speed up IoT initiatives, the IoT starter evolves a customizable, ready to run, `Thing` device. A comprehensive path is provided by following episodes:
 
