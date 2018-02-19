@@ -42,7 +42,7 @@ The code will keep evolving `IoT.Starter.Pi.Thing` embryos powered by open API F
 
 ## Memory available
 
-After all three containers running at Raspberry Pi 2 model B with Linux, the `free -h` command below detects more than 400 Mbytes free memory. By definition of IoT Starter concept, `IoT.Starter.Pi.Thing` comes with just basic stuff, ready to start the development of your IoT initiative. Then, this is the RAM amount available for `home-web` and `home-ui` growth.
+After all three containers running at Raspberry Pi 2 model B with Linux, the `free -h` command below detects more than 400 Mbytes free memory. By definition of IoT Starter concept, `IoT.Starter.Pi.Thing` comes with just basic stuff, ready to start the development of your IoT initiative. Then, 411 Mbytes is the RAM amount available for `home-web` and `home-ui` growth.
 
 	pi@lumi:~ $ docker ps
 	CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                          NAMES
