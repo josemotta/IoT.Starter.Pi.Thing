@@ -55,7 +55,7 @@ After all three containers running at Raspberry Pi 2 model B with Linux, the `fr
 	Mem:           927M        179M        411M         58M        335M        639M
 	Swap:           99M          0B         99M
 
-As shown by `df -h` command, the 15 GB disk mounted at Raspberry Pi 2 model B with Linux still have 10 GB free space.
+As shown by `df -h` command, the 15 GB disk mounted at Raspberry Pi 2 model B with Linux still has 10 GB free space.
 
 	pi@lumi:~ $ df -h
 	Filesystem      Size  Used Avail Use% Mounted on
