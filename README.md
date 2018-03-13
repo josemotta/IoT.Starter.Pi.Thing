@@ -67,5 +67,5 @@ As shown by `df -h` command, the 15 GB disk mounted at Raspberry Pi 2 model B wi
 	tmpfs            93M     0   93M   0% /run/user/1000
 
 
-*Did you like? Please :star: me!*
+*Did you like it? Please give me a :star:!*
 
